@@ -9,7 +9,7 @@ namespace Trainer_Data
 
         }
        
-       // public int User_Id { get; set; }
+       public int User_Id { get; set; }
         public string Name { 
             get;
             set;

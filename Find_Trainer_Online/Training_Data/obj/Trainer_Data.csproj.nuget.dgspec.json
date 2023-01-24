@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\P1-Mounika-Baitapalli\\Finding_Trainer_Online\\Training_Data\\Trainer_Data.csproj": {}
+    "C:\\P1-Mounika-Baitapalli\\Find_Trainer_Online\\Training_Data\\Trainer_Data.csproj": {}
   },
   "projects": {
-    "C:\\P1-Mounika-Baitapalli\\Finding_Trainer_Online\\Training_Data\\Trainer_Data.csproj": {
+    "C:\\P1-Mounika-Baitapalli\\Find_Trainer_Online\\Training_Data\\Trainer_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\P1-Mounika-Baitapalli\\Finding_Trainer_Online\\Training_Data\\Trainer_Data.csproj",
+        "projectUniqueName": "C:\\P1-Mounika-Baitapalli\\Find_Trainer_Online\\Training_Data\\Trainer_Data.csproj",
         "projectName": "Trainer_Data",
-        "projectPath": "C:\\P1-Mounika-Baitapalli\\Finding_Trainer_Online\\Training_Data\\Trainer_Data.csproj",
+        "projectPath": "C:\\P1-Mounika-Baitapalli\\Find_Trainer_Online\\Training_Data\\Trainer_Data.csproj",
         "packagesPath": "C:\\Users\\RGUKT\\.nuget\\packages\\",
-        "outputPath": "C:\\P1-Mounika-Baitapalli\\Finding_Trainer_Online\\Training_Data\\obj\\",
+        "outputPath": "C:\\P1-Mounika-Baitapalli\\Find_Trainer_Online\\Training_Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RGUKT\\AppData\\Roaming\\NuGet\\NuGet.Config",

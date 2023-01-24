@@ -15,8 +15,7 @@ namespace TrainerProject
         private static Details details = new Details();
         static void Main(string[] args)
         {
-            /*Log.Logger = new LoggerConfiguration()
-                .WriteTo.File(@"..\..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+            /*Log.Logger = new LoggerConfiguration().WriteTo.File(@"..\..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
                 .CreateLogger();
 
             Log.Logger.Information("-------Program starts here-------");*/
@@ -52,8 +51,16 @@ namespace TrainerProject
                         
                         menu = new Trainer_Profile(details);
                         break;
-                        
-                        
+                    case "TUpdate":
+                        Console.WriteLine("updateing the trainer details");
+                        menu = new TUpdate(details);
+                        break;
+                    case "TDelete":
+                        Console.WriteLine("Delete  the profile which user wish to delete");
+                        menu = new TDelete(details);
+                        break;
+
+
                     /*while (value)
                     {
 
@@ -70,6 +77,7 @@ namespace TrainerProject
 
 */
                     case "Exit":
+                        
                         Console.WriteLine("Thank you for using Online Trainer Application'");
                         Console.WriteLine("-------Program ends-------");
 
