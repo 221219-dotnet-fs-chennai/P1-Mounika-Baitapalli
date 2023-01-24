@@ -1,0 +1,39 @@
+Find a Trainer Online:-
+Created an Online application to add professional trainers data in a database and these trainers are  being able to upload their profiles.
+
+Functionalities:-
+
+SignUp()
+signIn()
+Add/update/delete personal details
+Add/update/delete skills
+Add/update/delete company details
+Add/update/delete educational details
+
+
+
+
+
+Technology Stack:
+
+.Net
+Sql Server db/Azure sql db
+C#
+Nlog
+ADO.Net
+Nugget packages
+Git
+
+Implemented Using:
+
+C#:
+Regex
+Exception handling
+Logging
+abstraction
+encapsulation
+polymorphism
+
+ SQL:
+ 
+
