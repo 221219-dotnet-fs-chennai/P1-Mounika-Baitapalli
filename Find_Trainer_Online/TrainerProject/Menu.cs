@@ -11,7 +11,7 @@ namespace TrainerProject
         public void Display()
         {
             Console.WriteLine("\nWelcome to the Online Trainers Application ...\n\nSelect an option to proceed...");
-            Console.WriteLine(" Press[3] to Get Trainers List");
+            //Console.WriteLine(" Press[3] to Get Trainers List");
             Console.WriteLine("Press[2] to Trainer  Login");
             Console.WriteLine("Press[1] to Trainer  SignUp");
             Console.WriteLine("Press[E] to exit ");

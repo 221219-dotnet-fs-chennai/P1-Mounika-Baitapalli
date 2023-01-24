@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,102 +24,75 @@ namespace TrainerProject
             public void Display()
         {
             System.Console.Clear();
-            Console.WriteLine("[0] for to show profile data");
+
+            Console.WriteLine("[0] go back");
             Console.WriteLine("[1] for to update details");
-            Console.WriteLine("[2] for to delete details");
-            Console.WriteLine("[5] To for logout");
+            
 
         }
         public new string UserChoice()
         {
             
             System.Console.Write("\nEnter your choice: ");
-            int obj = Convert.ToInt32(Console.ReadLine());
-            if (obj == 0)
+            string match = Console.ReadLine();
+            if (match == "0")
             {
-                return "ShowDetails";
+                return "Trainer_Profile";
             }
-            if (obj == 1)
+
+            if (match == "1")
             {
-                Console.Clear();
-                Console.WriteLine("UPDATE DETAILS ");
-                Console.WriteLine("[M] To go Back");
-                Console.WriteLine("[1] To Update Trainer_Details");
-                Console.WriteLine("[2] To Update Skill_Set");
-                Console.WriteLine("[3] To Update Company_Details");
-                Console.WriteLine("[4] To Update Education_Details");
+                System.Console.WriteLine("[M] Go Back             : ");
+                System.Console.WriteLine("[1] Name                : " + details.Name);
+                System.Console.WriteLine("[2] Age                 : " + details.Age);
+                System.Console.WriteLine("[3] Gender              : " + details.Gender);
+                System.Console.WriteLine("[4] EmailId             : " + details.EmailId);
+                System.Console.WriteLine("[5] Password            : " + details.Password);
+                System.Console.WriteLine("[6] Contact Number      : " + details.Contact_Number);
+                System.Console.WriteLine("[7] Location            : " + details.Location);
+                System.Console.WriteLine("[8] SocialMedia_Profile : " + details.SocialMedia_Profile);
+                System.Console.WriteLine("[9] Skill_1             : " + details.Skill_1);
+                System.Console.WriteLine("[10]Skill_2              : " + details.Skill_2);
+                System.Console.WriteLine("[11]Skill_3             : " + details.Skill_3);
+                System.Console.WriteLine("[12]Company_Name          : " + details.Company_Name);
+                System.Console.WriteLine("[13] Experience_In_Years  : " + details.Experience_In_Years);
+                System.Console.WriteLine("[14]Position              : " + details.Position);
+                System.Console.WriteLine("[15]Institution          : " + details.Institution);
+                System.Console.WriteLine("[16] Degree              : " + details.Degree);
+                System.Console.WriteLine("[17] Specialization      : " + details.Specialization);
+                System.Console.WriteLine("[18] Year_Of_Passing     : " + details.Year_Of_Passing);
 
-                string match = Console.ReadLine();
-                if (match == "0")
-                {
-                    Console.Clear();
-                    return "TUpdate";
-                }
-                if (match == "1")
-                {
-                    System.Console.WriteLine("[M] Go Back             : ");
-
-                    System.Console.WriteLine("[1] Name                : " + details.Name);
-                    System.Console.WriteLine("[2] Age                 : " + details.Age);
-                    System.Console.WriteLine("[3] Gender              : " + details.Gender);
-                    System.Console.WriteLine("[4] EmailId             : " + details.EmailId);
-                    System.Console.WriteLine("[5] Password            : " + details.Password);
-                    System.Console.WriteLine("[6] Contact Number      : " + details.Contact_Number);
-                    System.Console.WriteLine("[7] Location            : " + details.Location);
-                    System.Console.WriteLine("[8] SocialMedia_Profile : " + details.SocialMedia_Profile);
-                }
-                if (match == "2")
-                {
-                    System.Console.WriteLine("[M] Go Back             : ");
-                    System.Console.WriteLine("[9] Skill_1             : " + details.Skill_1);
-                    System.Console.WriteLine("[10]Skill_2              : " + details.Skill_2);
-                    System.Console.WriteLine("[11]Skill_3             : " + details.Skill_3);
-                }
-                if (match == "3")
-                {
-                    System.Console.WriteLine("[0] Go Back               : ");
-                    System.Console.WriteLine("[12]Company_Name          : " + details.Company_Name);
-                    System.Console.WriteLine("[13] Experience_In_Years  : " + details.Experience_In_Years);
-                    System.Console.WriteLine("[14]Position              : " + details.Position);
-
-
-                }
-                if (match == "4")
-                {
-                    System.Console.WriteLine("[M] Go Back              : ");
-                    System.Console.WriteLine("[15]Institution          : " + details.Institution);
-                    System.Console.WriteLine("[16] Degree              : " + details.Degree);
-                    System.Console.WriteLine("[17] Specialization      : " + details.Specialization);
-                    System.Console.WriteLine("[18] Year_Of_Passing     : " + details.Year_Of_Passing);
-
-                }
 
                 Console.Write("Please Enter Your Choice To Update: ");
                 string myobj = System.Console.ReadLine();
 
+
+
                 switch (myobj)
                 {
                     case "0":
-                        return "ShowDetails";
+                        return "Trainer_Profile";
 
                     case "1":
-                        System.Console.Write("Enter your Name to Update : ");
+
+                        System.Console.Write("Enter your Fullname to update: ");
                         details.Name = System.Console.ReadLine();
-                        repo.TUpdate("Trainer_Details", "Name", details.Name, details.User_Id);
+                        repo.TUpdate("Trainer_Details", "Full_name", details.Name, details.User_Id);
                         return "TUpdate";
+
                     case "2":
-                        try
-                        {
-                            System.Console.Write("Enter your Age to update: ");
-                            details.Age = Convert.ToInt32(System.Console.ReadLine());
-                            repo.TUpdate("Trainer_Details", "Age", Convert.ToString(details.Age), details.User_Id);
-                        }
-                        catch (Exception ex)
-                        {
-                            System.Console.WriteLine("Age should be in numbers!!");
-                            System.Console.WriteLine(ex.Message);
-                            System.Console.ReadLine();
-                        }
+
+
+                        System.Console.Write("Enter your Age to update: ");
+                        details.Age = Convert.ToInt32(System.Console.ReadLine());
+                        repo.TUpdate("Trainer_Details", "Age", Convert.ToString(details.Age), details.User_Id);
+
+
+
+                        System.Console.WriteLine("Age should be in numbers!!");
+
+                        System.Console.ReadLine();
+
                         return "TUpdate";
                     case "3":
                         System.Console.Write("Enter your Gender: ");
@@ -150,7 +124,7 @@ namespace TrainerProject
                         return "TUpdate";
 
                     case "6":
-                        System.Console.Write("Enter your Mobile number to update: ");
+                        System.Console.Write("Enter your Contact number to update: ");
                         string pattern = @"\(?\d{3}\)?(-|.|\s)?\d{3}(-|.)?\d{4}";
 
                         string Contact_Number = System.Console.ReadLine();
@@ -231,19 +205,19 @@ namespace TrainerProject
                         repo.TUpdate("Education_Details", "Year_Of_Passing", details.Year_Of_Passing, details.User_Id);
                         return "TUpdate";
 
+
+
+                    default:
+                        Console.WriteLine("you have entered a wrong choice,Click Enter to Continue:");
+                        Console.ReadLine();
+                        return "TUpdate";
                 }
-
-
-
-
-                Console.WriteLine("Logging Out......Click Enter to Continue");
-                Console.ReadLine();
-                return "Menu";
-
-
-               
             }
-            return "ShowDetails";
+
+
+            return "Trainer_Profile";      
+            
+            
         }
 
     }

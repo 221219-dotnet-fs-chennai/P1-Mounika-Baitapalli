@@ -1,61 +1,42 @@
-﻿/*using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Trainer_Data;
+using TrainerProject;
 
 namespace TrainerProject
 {
-    internal class GetTrainersList:IMenu
+    public class GetTrainersList : IMenu
     {
-       
-            static string conStr = File.ReadAllText("../../../Trainer_Data/connectionString.txt");
-            ISqlRepo repo = new SqlRepo(conStr);
-
-            public void Display()
-            {
-                Console.WriteLine("\n----------Get Trainer's List----------\n");
-                Console.WriteLine("\n[0] Main Menu\n[1] Get all trainers\n[2] Get trainers by filter");
-            }
-
-            public string UserChoice()
-            {
-                Console.WriteLine("\n---------------------------");
-                Console.Write("Enter your choice: ");
-                string userChoice = Console.ReadLine();
-
-                switch (userChoice)
-                {
-                    case "0":
-                        return "Menu";
-                    case "1":
-                        Console.Clear();
-                        Console.WriteLine("\n--------------------------------------------------------TRAINERS LIST----------------------------------------------------------\n");
-
-                        Log.Logger.Information("Getting all trainers");
-                        var listoftrainers = repo.GetAllTrainersDisconnected();
-                        Log.Logger.Information($"Got list of {listoftrainers.Count} trainers");
-                        Log.Logger.Information("Reading trainers from database");
-
-                        foreach (var val in listoftrainers)
-                        {
-                            Console.WriteLine(val.TrainerDetails());
-                        }
-                        Log.Logger.Information("Reading traines Ends");
-                        Console.WriteLine("\nPress enter to continue...");
-                        Console.ReadLine();
-                        return "GetTrainers";
-                    case "2":
-                        return "GetTrainerbyFilter";
-                    default:
-                        Console.WriteLine("\nWrong choice, Try Again!");
-                        Console.WriteLine("Enter to continue");
-                        Console.ReadLine();
-                        return "GetTrainers";
-
-                }
-            }
+        static string conStr = File.ReadAllText("../../../connectionstring.txt");
+        ISqlRepo repo = new SqlRepo(conStr);
+        public void Display()
+        {
+            Console.WriteLine("[G] TO get all trainers");
+            Console.WriteLine("[0] To go Back");
         }
-    }
 
-*/
+        public string UserChoice()
+        {
+            Console.WriteLine("Enter Your Choice:");
+            string mychoice = Console.ReadLine();
+            switch (mychoice)
+            {
+                case "0":
+                    return "Signup";
+                case "G":
+                    var listof = repo.GetTrainersList();
+                    foreach (var i in listof)
+                    {
+                        Console.WriteLine(i.details());
+                    }
+                    return "Menu";
+            }
+            return "Menu";
+        }
+
+    }
+}

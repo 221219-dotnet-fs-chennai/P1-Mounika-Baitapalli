@@ -79,15 +79,7 @@ namespace TrainerProject
 
                     }
                     return "TSignUp";
-                /*case "1":
-                    Console.WriteLine("Adding trainer details");
-                    repo.Add(details);
-                    details = new Details();
-                    System.Console.WriteLine("Successfully added");
-                    Console.WriteLine("trainer details added Successfully ");
-                    System.Console.WriteLine("Press enter to continue");
-                    System.Console.ReadLine();
-                    return "TSignUp";*/
+                
                 case "2":
                     System.Console.Write("Enter your Name: ");
                     details.Name = System.Console.ReadLine();

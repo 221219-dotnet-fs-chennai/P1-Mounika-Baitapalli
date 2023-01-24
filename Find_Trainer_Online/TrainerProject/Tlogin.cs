@@ -18,7 +18,6 @@ namespace TrainerProject
                 Console.WriteLine("[M] To Go For Menu");
                 Console.WriteLine("[1] to Proceed Login");
             }
-
             public string UserChoice()
             {
                 
@@ -34,13 +33,13 @@ namespace TrainerProject
                         string EmailId = Console.ReadLine();
                         bool login_obj = repo.Tlogin(EmailId);
                     
-                        /*if (login_obj)
+                        if (login_obj)
                         {
-                            TSignUp trainesignup = new TSignUp(repo.GetAllTrainers(EmailId));
+                            TSignUp tsignup = new TSignUp(repo.Get(EmailId));
 
-                            return "TrainerProfile";
+                            return "Trainer_Profile";
                         }
-                        else*/
+                        else
                         
                             return "TUpdate";
                         

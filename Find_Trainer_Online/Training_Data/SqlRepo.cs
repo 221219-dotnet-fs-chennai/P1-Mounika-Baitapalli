@@ -169,7 +169,7 @@ namespace Trainer_Data
             con.Open();
 
 
-            string query = $@" select User_Id from Trainers_Details where EmailId = '{EmailId}'; ";
+            string query = $@" select User_Id from Trainer_Details where EmailId = '{EmailId}'; ";
             SqlCommand command1 = new SqlCommand(query, con);
             int User_Id = Convert.ToInt32(command1.ExecuteScalar());
             string query1 = $@" select * from Trainer_Details  where User_Id = '{User_Id}'; ";
@@ -181,29 +181,25 @@ namespace Trainer_Data
             SqlDataReader Readerobj1 = command2.ExecuteReader();
             while (Readerobj1.Read())
             {
-                //details.User_Id = Readerobj1.GetInt32(0);
+                details.User_Id = Readerobj1.GetInt32(0);
                 details.Name = Readerobj1.GetString(1);
                 details.Age = Readerobj1.GetInt32(2);
                 details.Gender = Readerobj1.GetString(3);
                 details.EmailId = Readerobj1.GetString(4);
                 details.Password = Readerobj1.GetString(5);
-
                 details.Contact_Number = Readerobj1.GetString(6);
                 details.Location = Readerobj1.GetString(7);
                 details.SocialMedia_Profile = Readerobj1.GetString(8);
-
-
             }
             Readerobj1.Close();
 
-
-            string query2 = $@"select * from Skills where User_Id = '{User_Id}';";
+            string query2 = $@"select * from Skill_Set where User_Id = '{User_Id}';";
             SqlCommand command3 = new SqlCommand(query2, con);
 
             SqlDataReader Readerobj2 = command3.ExecuteReader();
             while (Readerobj2.Read())
             {
-                // details.User_Id = Readerobj2.GetInt32(0);
+                details.User_Id = Readerobj2.GetInt32(0);
                 details.Skill_1 = Readerobj2.GetString(1);
                 details.Skill_2 = Readerobj2.GetString(2);
                 details.Skill_3 = Readerobj2.GetString(3);
@@ -215,11 +211,11 @@ namespace Trainer_Data
             SqlDataReader Readerobj3 = command4.ExecuteReader();
             while (Readerobj3.Read())
             {
-                //details.User_Id = Readerobj3.GetInt32(0);
+                details.User_Id = Readerobj3.GetInt32(0);
                 details.Company_Name = Readerobj3.GetString(1);
                 details.Experience_In_Years = Readerobj3.GetString(2);
                 details.Position = Readerobj3.GetString(3);
-
+             }
                 Readerobj3.Close();
 
 
@@ -228,25 +224,22 @@ namespace Trainer_Data
                 SqlDataReader Readerobj4 = command5.ExecuteReader();
                 while (Readerobj4.Read())
                 {
-                    // details.User_Id = Read4.GetInt32(0);
+                     details.User_Id = Readerobj4.GetInt32(0);
                     details.Institution = Readerobj4.GetString(1);
                     details.Degree = Readerobj4.GetString(2);
                     details.Specialization = Readerobj4.GetString(3);
                     details.Year_Of_Passing = Readerobj4.GetString(4);
                 }
                 Readerobj4.Close();
-
-
-
-
-            }
+            
             return details;
         }
         public void TUpdate(string tableName, string columnName, string newValue, int User_Id)
         {
+            Details details = new Details();
             using SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            SqlCommand command = new SqlCommand();
+            SqlCommand cmd = new SqlCommand();
             try
             {
                 if (tableName == "Trainer_Details")
@@ -254,7 +247,7 @@ namespace Trainer_Data
                     if (columnName == "Age")
                     {
                         int newvalue = Convert.ToInt32(newValue);
-                        string query = $"UPDATE {tableName} SET {columnName} = '{newvalue}' WHERE   User_Id = '{User_Id}'";
+                        string query = $"UPDATE {tableName} SET {columnName} = '{newvalue}' WHERE User_Id = '{User_Id}'";
                         SqlCommand command1 = new SqlCommand(query, con);
                         Log.Information($"{User_Id} is this");
                         command1.ExecuteNonQuery();
@@ -270,40 +263,84 @@ namespace Trainer_Data
                 }
                 else
                 {
-                    string query = $"UPDATE {tableName} SET {columnName} = '{newValue}' WHERE User_Id = '{User_Id}'";
+                    string query = $"UPDATE {tableName} SEt {columnName} = '{newValue}' WHERE User_Id = '{User_Id}'";
                     SqlCommand command1 = new SqlCommand(query, con);
                     command1.ExecuteNonQuery();
                     Console.WriteLine("Data updated");
                 }
-                Console.WriteLine("Data you have entered updated Successfully");
+                Console.WriteLine("The Data have been updated Successfully");
                 Console.ReadLine();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
-
-
-
-         
         }
 
-        public void TDelete(string col, string table, int User_Id)
+        public void TDelete(string column, string table, int User_Id)
+
         {
-            using SqlConnection connect = new SqlConnection(connectionstring);
-            connect.Open();
+            Details details = new Details();
+            using SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            try
+            {
 
+                if (column == "Age")
+                {
+                    string query = $"UPDATE {table} set {column} = 0 where user_id = '{User_Id}';";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    string query = $"UPDATE {table} set {column} = 'Null' where user_id = '{User_Id}';";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                }
+                Console.WriteLine("The Data  which you wish to delete,deleted successfully_________");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("{0}" + ex.Message);
+            }
 
+        }
 
+        public List<Details> GetTrainersList()
+        {
+            List<Details> details = new List<Details>();
+            
+            using SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            string query = $@"select User_Id , Name, Age, Gender, EmailId,Password,Contact_Number,Location,SocialMedia_Profile from Trainer_Details";
+            SqlDataAdapter ada = new SqlDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            ada.Fill(ds);
+            DataTable dt = ds.Tables[0];
+            foreach (DataRow dr in dt.Rows)
+            {
+                details.Add(new Details()
+                {
 
-            string query = $"UPDATE {table} set {col} = 'Null' where user_id = '{User_Id}';";
-            SqlCommand cmd = new SqlCommand(query, connect);
-            cmd.ExecuteNonQuery();
+                    User_Id = (int)dr["User_Id"],
+                    Name = (string)dr["Name"],
+                    Age = (int)dr["Age"],
+                    Gender = (string)dr["Gender"],
+                    EmailId = (string)dr["EmailId"],
+                    Password = (string)dr["Password"],
+                    Contact_Number = (string)dr["Contact_Number"],
+                    Location = (string)dr["Location"],
+                    SocialMedia_Profile = (string)dr["SocialMedia_Profile"],
 
-            Console.WriteLine("Data deleted successfully");
+                }); ;
+            }
+            return details;
         }
     }
 }
+
+
 
 
 
