@@ -76,10 +76,11 @@ namespace TrainerProject
                         Console.WriteLine($"failed to add trainer details {ex.Message}");
                         System.Console.WriteLine("Press enter to continue");
                         System.Console.ReadLine();
-
                     }
+
                     return "TSignUp";
-                
+            
+            
                 case "2":
                     System.Console.Write("Enter your Name: ");
                     details.Name = System.Console.ReadLine();
