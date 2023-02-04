@@ -1,0 +1,14 @@
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\DataFluentApi.deps.json
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\DataFluentApi.runtimeconfig.json
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\DataFluentApi.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\DataFluentApi.pdb
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.AssemblyInfo.cs
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\refint\DataFluentApi.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.pdb
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.genruntimeconfig.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\ref\DataFluentApi.dll
