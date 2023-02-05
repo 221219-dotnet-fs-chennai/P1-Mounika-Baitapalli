@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    internal interface ILogic
+    internal interface ICompanyDetailLogic
     {
-
     }
 }

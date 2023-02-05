@@ -19,6 +19,12 @@ namespace DataFluentApi
             return context.TrainerDetail;
 
         }
+
+        /*public IEnumerable<TrainerDetail> GetGetAllTrainerDetail()
+        {
+            throw new NotImplementedException();
+        }
+*/
         public List<TrainerDetail> GetTrainersList()
         {
            return context.TrainerDetails.ToList();

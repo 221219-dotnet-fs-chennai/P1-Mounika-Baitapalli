@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 
 namespace DataFluentApi.Entities;
@@ -28,4 +29,9 @@ public partial class TrainerDetail
     public virtual EducationDetail? EducationDetail { get; set; }
 
     public virtual SkillSet? SkillSet { get; set; }
+
+    public IEnumerable<Trainer> Select(Func<TrainerDetail, IEnumerable<Trainer>> trMap)
+    {
+        throw new NotImplementedException();
+    }
 }
