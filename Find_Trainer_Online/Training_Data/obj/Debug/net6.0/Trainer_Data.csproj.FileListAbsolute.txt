@@ -34,3 +34,15 @@ C:\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trai
 C:\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trainer_Data.dll
 C:\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trainer_Data.pdb
 C:\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\ref\Trainer_Data.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trainer_Data.deps.json
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trainer_Data.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\bin\Debug\net6.0\Trainer_Data.pdb
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.AssemblyInfo.cs
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\refint\Trainer_Data.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\Trainer_Data.pdb
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Find_Trainer_Online\Training_Data\obj\Debug\net6.0\ref\Trainer_Data.dll
