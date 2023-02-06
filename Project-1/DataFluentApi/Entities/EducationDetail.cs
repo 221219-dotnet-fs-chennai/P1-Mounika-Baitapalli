@@ -18,8 +18,8 @@ public partial class EducationDetail
 
     public virtual TrainerDetail User { get; set; } = null!;
 
-    public IEnumerable<Trainer> Select(Func<EducationDetail, IEnumerable<Trainer>> edMap)
+    /*public IEnumerable<Trainer> Select(Func<EducationDetail, IEnumerable<Trainer>> edMap)
     {
         throw new NotImplementedException();
-    }
+    }*/
 }

@@ -16,8 +16,8 @@ public partial class SkillSet
 
     public virtual TrainerDetail User { get; set; } = null!;
 
-    public IEnumerable<Trainer> Select(Func<SkillSet, IEnumerable<Trainer>> sMap)
+    /*public IEnumerable<Trainer> Select(Func<SkillSet, IEnumerable<Trainer>> sMap)
     {
         throw new NotImplementedException();
-    }
+    }*/
 }

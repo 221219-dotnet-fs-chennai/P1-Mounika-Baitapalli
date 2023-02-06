@@ -67,10 +67,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.2, )"
-            },
-            "Microsoft.Exchange.WebServices": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             }
           },
           "imports": [

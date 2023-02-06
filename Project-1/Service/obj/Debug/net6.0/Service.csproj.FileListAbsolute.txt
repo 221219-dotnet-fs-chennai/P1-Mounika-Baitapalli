@@ -1,0 +1,7 @@
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Service\obj\Debug\net6.0\Service.MvcApplicationPartsAssemblyInfo.cache

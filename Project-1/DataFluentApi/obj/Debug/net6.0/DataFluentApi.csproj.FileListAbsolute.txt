@@ -12,3 +12,6 @@ C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataF
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.pdb
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.genruntimeconfig.cache
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\ref\DataFluentApi.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\Models.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\bin\Debug\net6.0\Models.pdb
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\DataFluentApi\obj\Debug\net6.0\DataFluentApi.csproj.CopyComplete

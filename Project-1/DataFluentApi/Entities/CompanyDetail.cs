@@ -16,8 +16,8 @@ public partial class CompanyDetail
 
     public virtual TrainerDetail User { get; set; } = null!;
 
-    public IEnumerable<Trainer> Select(Func<CompanyDetail, IEnumerable<Trainer>> cmMap)
+    /*public IEnumerable<Trainer> Select(Func<CompanyDetail, IEnumerable<Trainer>> cmMap)
     {
         throw new NotImplementedException();
-    }
+    }*/
 }

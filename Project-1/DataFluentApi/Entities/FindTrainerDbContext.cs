@@ -7,8 +7,8 @@ namespace DataFluentApi.Entities;
 
 public partial class FindTrainerDbContext : DbContext
 {
-    internal TrainerDetail TrainerDetail;
-    string path = File.ReadAllText("../../../TrainerProject/connectionstring.txt");
+    //internal TrainerDetail TrainerDetail;
+    //string path = File.ReadAllText("../../../TrainerProject/connectionstring.txt");
     public FindTrainerDbContext()
     {
     }
@@ -26,9 +26,9 @@ public partial class FindTrainerDbContext : DbContext
 
     public virtual DbSet<TrainerDetail> TrainerDetails { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer(path);
+     //   => optionsBuilder.UseSqlServer(path);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

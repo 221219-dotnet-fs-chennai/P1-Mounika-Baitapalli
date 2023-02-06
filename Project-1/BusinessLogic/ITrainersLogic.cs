@@ -8,9 +8,9 @@ using Models;
 
 namespace BusinessLogic
 {
-    public interface ITrainerDetailLogic
+    public interface ITrainersLogic
     {
-        TrainerDetail AddTrainerDetail(TrainerDetail trainerDetail);
+        Trainer_Detail AddTrainerDetail(Trainer_Detail td);
 
     }
 }

@@ -5,20 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
-using Trainer_Data = DataFluentApi.Entities;
+using DataFluentApi.Entities;
 using System.Net.Cache;
 using Azure;
 using System.Reflection;
-using Microsoft.Exchange.WebServices.Data;
+
 
 namespace BusinessLogic
 {
-    internal class Mapper
+    public class Mapper
     {
-
-        public static Models.Trainer TMap(Trainer_Data.TrainerDetail t)
+        public static Models.Trainer_Detail TMap(DataFluentApi.Entities.TrainerDetail t)
         {
-            return new Models.Trainer()
+            return new Models.Trainer_Detail()
             {
                 User_Id = t.UserId,
                 Name = t.Name,
@@ -32,9 +31,9 @@ namespace BusinessLogic
 
             };
         }
-        public static Trainer_Data.TrainerDetail TMap(Models.Trainer td)
+        public static DataFluentApi.Entities.TrainerDetail TMap(Models.Trainer_Detail td)
         {
-            return new Trainer_Data.TrainerDetail
+            return new DataFluentApi.Entities.TrainerDetail()
             {
                 UserId = td.User_Id,
                 Name = td.Name,
@@ -48,13 +47,13 @@ namespace BusinessLogic
             };
         }
 
-        public static IEnumerable<Models.Trainer>trMap(Trainer_Data.TrainerDetail td)
+        public static IEnumerable<Models.Trainer_Detail>TMap(IEnumerable<DataFluentApi.Entities.TrainerDetail> td )
         {
-            return td.Select(trMap);
+            return td.Select(TMap);
         }
-        public static Models.Trainer EdMap(Trainer_Data.EducationDetail ed)
+        public static Models.Education_Detail EdMap(DataFluentApi.Entities.EducationDetail ed)
         {
-            return new Models.Trainer()
+            return new Models.Education_Detail()
             {
                 User_Id = ed.UserId,
                 Institution = ed.Institution,
@@ -66,9 +65,9 @@ namespace BusinessLogic
             };
 
         }
-        public static Trainer_Data.EducationDetail EdMap(Models.Trainer e)
+        public static DataFluentApi.Entities.EducationDetail EdMap(Models.Education_Detail e)
         {
-            return new Trainer_Data.EducationDetail
+            return new DataFluentApi.Entities.EducationDetail
             {
                 UserId = e.User_Id,
                 Institution = e.Institution,
@@ -77,14 +76,14 @@ namespace BusinessLogic
                 YearOfPassing = e.Year_Of_Passing,
             };
         }
-        public static IEnumerable<Models.Trainer> edMap(Trainer_Data.EducationDetail edu)
+        public static IEnumerable<Models.Education_Detail> EdMap(IEnumerable<DataFluentApi.Entities.EducationDetail> edu )
         {
-            return edu.Select(edMap);
+            return edu.Select(EdMap);
         }
 
-        public static Models.Trainer CmpMap(Trainer_Data.CompanyDetail cmp)
+        public static Models.Company_Detail CmpMap(DataFluentApi.Entities.CompanyDetail cmp)
         {
-            return new Models.Trainer()
+            return new Models.Company_Detail()
             {
                 User_Id = cmp.UserId,
                 Company_Name = cmp.CompanyName,
@@ -93,9 +92,9 @@ namespace BusinessLogic
 
             };
         }
-        public static Trainer_Data.CompanyDetail CmpMap(Models.Trainer c)
+        public static DataFluentApi.Entities.CompanyDetail CmpMap(Models.Company_Detail c)
         {
-            return new Trainer_Data.CompanyDetail
+            return new DataFluentApi.Entities.CompanyDetail
             {
                 UserId = c.User_Id,
                 CompanyName = c.Company_Name,
@@ -103,14 +102,14 @@ namespace BusinessLogic
                 Position = c.Position,
             };
         }
-        public static IEnumerable<Models.Trainer> cmMap(Trainer_Data.CompanyDetail compn)
+        public static IEnumerable<Models.Company_Detail> CmpMap(IEnumerable<DataFluentApi.Entities.CompanyDetail> compn)
         {
-            return compn.Select(cmMap);
+            return compn.Select(CmpMap);
         }
 
-        public static Models.Trainer SkillMap(Trainer_Data.SkillSet sk)
+        public static Models.Skill_Set SkillMap(DataFluentApi.Entities.SkillSet sk)
         {
-            return new Models.Trainer()
+            return new Models.Skill_Set()
             {
                 User_Id = sk.UserId,
                 Skill_1 = sk.Skill1,
@@ -119,9 +118,9 @@ namespace BusinessLogic
             };
         }
 
-        public static Trainer_Data.SkillSet SkillMap(Models.Trainer ss)
+        public static DataFluentApi.Entities.SkillSet SkillMap(Models.Skill_Set ss)
         {
-            return new Trainer_Data.SkillSet
+            return new DataFluentApi.Entities.SkillSet
             {
                 UserId = ss.User_Id,
                 Skill1 = ss.Skill_1,
@@ -129,9 +128,9 @@ namespace BusinessLogic
                 Skill3 = ss.Skill_3,
             };
         }
-        public static IEnumerable<Models.Trainer>sMap(Trainer_Data.SkillSet skill)
+        public static IEnumerable<Models.Skill_Set>SkillMap(IEnumerable<DataFluentApi.Entities.SkillSet> skill)
         {
-            return skill.Select(sMap);
+            return skill.Select(SkillMap);
         }
 
 

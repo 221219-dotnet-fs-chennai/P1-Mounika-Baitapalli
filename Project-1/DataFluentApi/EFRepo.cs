@@ -6,29 +6,34 @@ namespace DataFluentApi
     public class EFRepo : ISqlRepo<Entities.TrainerDetail>
     {
         FindTrainerDbContext context =new FindTrainerDbContext();
+        private FindTrainerDbContext _context;
 
-        public Entities.TrainerDetail Add(Entities.TrainerDetail details)
-        {
-            context.Add(details);
-            context.SaveChanges();
-            return details;
+        public EFRepo(FindTrainerDbContext context) {
+            _context = context;
         }
 
-        public TrainerDetail Get(string EmailId)
+        public Entities.TrainerDetail AddTrainerDetail(Entities.TrainerDetail td )
+        {
+            _context.TrainerDetails.Add(td);
+            _context.SaveChanges();
+            return td;
+        }
+
+        /*public TrainerDetail Get(string EmailId)
         {
             return context.TrainerDetail;
 
-        }
+        }*/
 
         /*public IEnumerable<TrainerDetail> GetGetAllTrainerDetail()
         {
             throw new NotImplementedException();
         }
 */
-        public List<TrainerDetail> GetTrainersList()
+       /* public List<TrainerDetail> GetTrainersList()
         {
            return context.TrainerDetails.ToList();
-        }
+        }*/
 
        /* public void TDelete(string column, string table, int User_Id)
         {

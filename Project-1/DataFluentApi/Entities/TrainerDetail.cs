@@ -30,8 +30,8 @@ public partial class TrainerDetail
 
     public virtual SkillSet? SkillSet { get; set; }
 
-    public IEnumerable<Trainer> Select(Func<TrainerDetail, IEnumerable<Trainer>> trMap)
+   /* public IEnumerable<Trainer> Select(Func<TrainerDetail, IEnumerable<Trainer>> trMap)
     {
         throw new NotImplementedException();
-    }
+    }*/
 }
