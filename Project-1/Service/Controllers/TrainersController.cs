@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BusinessLogic;
-using Microsoft.Extensions.Caching.Memory;
+﻿using BusinessLogic;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Caching.Memory;
 using Models;
 
 namespace Service.Controllers
 {
-
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class TrainersController:ControllerBase
+    public class TrainersController : ControllerBase
     {
         ITrainersLogic _logic;
         IMemoryCache _cache;
@@ -20,7 +20,7 @@ namespace Service.Controllers
         }
 
         [HttpPost("Add")]
-        public ActionResult Add([FromBody]Trainer_Detail td)
+        public ActionResult Add([FromBody] Trainer_Detail td)
 
         {
             try
@@ -32,14 +32,14 @@ namespace Service.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
-            
-                
 
-            
+
+
+
 
 
 

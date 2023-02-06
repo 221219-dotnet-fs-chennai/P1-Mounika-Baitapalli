@@ -5,10 +5,10 @@ namespace DataFluentApi
 {
     public class EFRepo : ISqlRepo<Entities.TrainerDetail>
     {
-        FindTrainerDbContext context =new FindTrainerDbContext();
-        private FindTrainerDbContext _context;
+        FindTrainerDatabaseContext context =new FindTrainerDatabaseContext();
+        private FindTrainerDatabaseContext _context;
 
-        public EFRepo(FindTrainerDbContext context) {
+        public EFRepo(FindTrainerDatabaseContext context) {
             _context = context;
         }
 

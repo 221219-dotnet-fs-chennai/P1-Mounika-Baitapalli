@@ -284,6 +284,12 @@
             "projectReferences": {
               "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\BusinessLogic\\BusinessLogic.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\DataFluentApi\\DataFluentApi.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\DataFluentApi\\DataFluentApi.csproj"
+              },
+              "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\Models\\Models.csproj"
               }
             }
           }
@@ -298,12 +304,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.2, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

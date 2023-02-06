@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFluentApi", "..\DataFluentApi\DataFluentApi.csproj", "{4F38FD62-65F3-40D4-9A52-4A5A69C7B0B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "..\Service\Service.csproj", "{395CA404-0766-4CCC-A5E3-0B455EC61361}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "..\Service\Service.csproj", "{86F27B3A-5066-4B7B-949A-67C07F266E5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{4F38FD62-65F3-40D4-9A52-4A5A69C7B0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F38FD62-65F3-40D4-9A52-4A5A69C7B0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F38FD62-65F3-40D4-9A52-4A5A69C7B0B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{395CA404-0766-4CCC-A5E3-0B455EC61361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{395CA404-0766-4CCC-A5E3-0B455EC61361}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{395CA404-0766-4CCC-A5E3-0B455EC61361}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{395CA404-0766-4CCC-A5E3-0B455EC61361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F27B3A-5066-4B7B-949A-67C07F266E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F27B3A-5066-4B7B-949A-67C07F266E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F27B3A-5066-4B7B-949A-67C07F266E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F27B3A-5066-4B7B-949A-67C07F266E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

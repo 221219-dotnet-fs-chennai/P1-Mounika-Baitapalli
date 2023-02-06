@@ -1,27 +1,27 @@
-using DataFluentApi.Entities;
 using BusinessLogic;
-using Microsoft.EntityFrameworkCore;
-using Models;
 using DataFluentApi;
+using DataFluentApi.Entities;
+using Models;
+using Microsoft.EntityFrameworkCore;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddMemoryCache();
 
-builder.Services.AddControllers().AddXmlSerializerFormatters();
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
-
-var config = builder.Configuration.GetConnectionString("FindTrainerdb");
-builder.Services.AddDbContext<FindTrainerDbContext>(options=> options.UseSqlServer(config));
-builder.Services.AddScoped<ISqlRepo<DataFluentApi.Entities.TrainerDetail>, DataFluentApi.EFRepo>();
-builder.Services.AddScoped<ITrainersLogic,TrainersLogic>();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+var config = builder.Configuration.GetConnectionString("TrainerdbConnection");
+builder.Services.AddDbContext<FindTrainerDatabaseContext>(options=> options.UseSqlServer(config));
+//builder.Services.AddDbContext<FindTrainerDatabaseContext>(options => options.UseSqlServer(config));
+builder.Services.AddScoped<ISqlRepo<DataFluentApi.Entities.TrainerDetail>, EFRepo>();
+builder.Services.AddScoped<ITrainersLogic, TrainersLogic>();
+
 
 var app = builder.Build();
 
