@@ -1,0 +1,4 @@
+﻿Server=tcp:mounikab-server.database.windows.net,1433;Initial Catalog=FindTrainer_database;Persist Security Info=False;User ID=MounikaBaitapalli;Password=Microsoftazure@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+

@@ -10,7 +10,15 @@ namespace Models
     {
         //IEnumerable<DataFluentApi.Entities.TrainerDetail> GetGetAllTrainerDetail();
         TrainerDetail AddTrainerDetail(TrainerDetail td);
-       
+
+        List<TrainerDetail> GetTrainer_Details();
+
+        TrainerDetail RemoveTrainerDetail(string Name);
+
+        TrainerDetail UpdateTrainerDetail(TrainerDetail td);
+
+
+
 
         /* bool Tlogin(string EmailId);
          void TUpdate(string tableName, string columnName, string newValue, int User_Id);
