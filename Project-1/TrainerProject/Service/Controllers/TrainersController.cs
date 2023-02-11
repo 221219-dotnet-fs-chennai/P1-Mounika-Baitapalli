@@ -19,15 +19,31 @@ namespace Service.Controllers
             // _cache = cache;
         }
 
-       
 
+        [HttpPost("Add")]
+        public ActionResult AddTrainer([FromBody] Trainer_Detail ttd)
+        {
+            try
+            {
+                var a = _logic.AddTrainerDetail(ttd);
+                return Created("Add", a);
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpGet("all")]
         public ActionResult Get()
         {
             try
             {
                 
-                var get=_logic.GetTrainer_Details().ToList();
+                var get=_logic.GetAllTrainers().ToList();
                 return Ok(get);
 
             }

@@ -1,4 +1,5 @@
-﻿using DataFluentApi.Entities;
+﻿using DataFluentApi;
+using DataFluentApi.Entities;
 using Models;
 
 
@@ -6,14 +7,19 @@ namespace BusinessLogic
 {
     public class TrainersLogic : ITrainersLogic
     {
-        ISqlRepo<DataFluentApi.Entities.TrainerDetail> _repo;
+        ISqlRepo _repo;
 
-        public TrainersLogic(ISqlRepo<DataFluentApi.Entities.TrainerDetail> repo)
+        public TrainersLogic(ISqlRepo repo)
         {
 
             _repo = repo;
         }
-       
+  
+       public Trainer_Detail AddTrainerDetail(Trainer_Detail trainer_detail) 
+        {
+
+            return Mapper.TMap(_repo.AddTrainerDetail(Mapper.TMap(trainer_detail)));
+        }
         /*public Education_Detail AddEducationDetail(Education_Detail edu)
         {
             return Mapper.EdMap(_repo.AddEducationDetail(Mapper.EdMap(edu)));
@@ -28,21 +34,29 @@ namespace BusinessLogic
             return Mapper.SkillMap(_repo.AddSkillSet(Mapper.SkillMap(s)));
         }*/
 
-        public IEnumerable<Trainer_Detail> GetTrainer_Details()
+        public IEnumerable<Trainer_Detail> GetAllTrainers()
         {
-            return Mapper.TMap(_repo.GetTrainer_Details());
+            return Mapper.TMap(_repo.GetAllTrainers());
+        }
+        public IEnumerable<Education_Detail> GetEducation_Details()
+        {
+            return Mapper.EdMap(_repo.GetEducation_Details());
+        }
+        public IEnumerable<Skill_Set> GetSkill_Sets()
+        {
+            return Mapper.SkillMap(_repo.GetSkill_Sets());
+        }
+        public IEnumerable<Company_Detail> GetCompany_Details()
+        {
+            return Mapper.CmpMap(_repo.GetCompany_Details());
         }
 
-        /*public IEnumerable<Trainer_Detail> GetTrainer_Details()
-        {
-            return Mapper.TMap(_repo.GetTrainerDetails());
-        }*/
 
-       /* public Trainer_Detail GetTrainerDetailsByUser_Id(int id)
-        {
-            var search = _repo.GetTrainer_Details().Where(td => td.UserId == id).FirstOrDefault();
-            return Mapper.TMap(search);
-        }*/
+        /* public Trainer_Detail GetTrainerDetailsByUser_Id(int id)
+         {
+             var search = _repo.GetTrainer_Details().Where(td => td.UserId == id).FirstOrDefault();
+             return Mapper.TMap(search);
+         }*/
         public Trainer_Detail RemoveTrainerDetailByName(string td)
         {
             var deleteTrainerDetail = _repo.RemoveTrainerDetail(td);
@@ -54,7 +68,7 @@ namespace BusinessLogic
         }
          public Trainer_Detail UpdateTrainerDetail (string Name,Trainer_Detail td)
         {
-            var trainer = (from tds in _repo.GetTrainer_Details() where tds.Name == Name && tds.UserId == td.User_Id select tds).FirstOrDefault();
+            var trainer = (from tds in _repo.GetAllTrainers() where tds.Name == Name && tds.UserId == td.User_Id select tds).FirstOrDefault();
 
             if (trainer != null)
             {

@@ -10,17 +10,20 @@ namespace BusinessLogic
 {
     public interface ITrainersLogic
     {
-        
-       // Trainer_Detail GetTrainerDetailsByUser_Id(int id);
-       /*Company_Detail AddCompanyDetail(Company_Detail td);
-        Education_Detail AddEducationDetail(Education_Detail td);
-        Skill_Set AddSkillSet(Skill_Set ss);
-*/
 
-        IEnumerable<Trainer_Detail> GetTrainer_Details();
-        /*IEnumerable<Company_Detail> GetCompany_Details();
-        IEnumerable<Skill_Set>GetSkill_Sets();
-        IEnumerable<Education_Detail> GetEducation_Details();*/
+        // Trainer_Detail GetTrainerDetailsByUser_Id(int id);
+
+        Trainer_Detail AddTrainerDetail(Trainer_Detail trainer_detail);
+        /*Company_Detail AddCompanyDetail(Company_Detail td);
+         Education_Detail AddEducationDetail(Education_Detail td);
+         Skill_Set AddSkillSet(Skill_Set ss);
+ */
+
+        IEnumerable<Trainer_Detail> GetAllTrainers();
+        IEnumerable<Company_Detail> GetCompany_Details();
+         IEnumerable<Skill_Set>GetSkill_Sets();
+         IEnumerable<Education_Detail> GetEducation_Details();
+
 
 
 

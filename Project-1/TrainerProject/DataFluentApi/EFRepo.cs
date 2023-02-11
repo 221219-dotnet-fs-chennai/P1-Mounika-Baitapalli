@@ -3,9 +3,9 @@ using Models;
 
 namespace DataFluentApi
 {
-    public class EFRepo : ISqlRepo<Entities.TrainerDetail>
+    public class EFRepo : ISqlRepo
     {
-        FindTrainerDatabaseContext context = new FindTrainerDatabaseContext();
+        //FindTrainerDatabaseContext context = new FindTrainerDatabaseContext();
         private FindTrainerDatabaseContext _context;
 
         public EFRepo(FindTrainerDatabaseContext context)
@@ -13,10 +13,28 @@ namespace DataFluentApi
             _context = context;
         }
 
-      
-        public List<Entities.TrainerDetail> GetTrainer_Details()
+        public TrainerDetail AddTrainerDetail(TrainerDetail t)
+        {
+            _context.TrainerDetails.Add(t);
+            _context.SaveChanges();
+            return t;
+        }
+
+        public List<Entities.TrainerDetail> GetAllTrainers()
         {
             return _context.TrainerDetails.ToList();
+        }
+        public List<Entities.CompanyDetail> GetCompany_Details()
+        {
+            return _context.CompanyDetails.ToList();
+        }
+        public List<Entities.EducationDetail> GetEducation_Details()
+        {
+            return _context.EducationDetails.ToList();
+        }
+        public List<Entities.SkillSet> GetSkill_Sets()
+        {
+            return _context.SkillSets.ToList();
         }
         public Entities.TrainerDetail RemoveTrainerDetail(string Name)
         {
