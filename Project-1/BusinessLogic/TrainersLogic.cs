@@ -13,10 +13,20 @@ namespace BusinessLogic
 
             _repo = repo;
         }
-        public Trainer_Detail AddTrainerDetail(Trainer_Detail td)
+       
+        /*public Education_Detail AddEducationDetail(Education_Detail edu)
         {
-            return Mapper.TMap(_repo.AddTrainerDetail(Mapper.TMap(td)));
+            return Mapper.EdMap(_repo.AddEducationDetail(Mapper.EdMap(edu)));
         }
+        public Company_Detail AddCompanyDetail(Company_Detail compn)
+        {
+            return Mapper.CmpMap(_repo.AddCompanyDetail(Mapper.CmpMap(compn)));
+
+        }
+        public Skill_Set AddSkillSet(Skill_Set s)
+        {
+            return Mapper.SkillMap(_repo.AddSkillSet(Mapper.SkillMap(s)));
+        }*/
 
         public IEnumerable<Trainer_Detail> GetTrainer_Details()
         {
@@ -28,11 +38,11 @@ namespace BusinessLogic
             return Mapper.TMap(_repo.GetTrainerDetails());
         }*/
 
-        public Trainer_Detail GetTrainerDetailsByUser_Id(int id)
+       /* public Trainer_Detail GetTrainerDetailsByUser_Id(int id)
         {
             var search = _repo.GetTrainer_Details().Where(td => td.UserId == id).FirstOrDefault();
             return Mapper.TMap(search);
-        }
+        }*/
         public Trainer_Detail RemoveTrainerDetailByName(string td)
         {
             var deleteTrainerDetail = _repo.RemoveTrainerDetail(td);

@@ -16,7 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-var config = builder.Configuration.GetConnectionString("TrainerdbConnection");
+var config = builder.Configuration.GetConnectionString("TrainerDbConnection");
 builder.Services.AddDbContext<FindTrainerDatabaseContext>(options=> options.UseSqlServer(config));
 //builder.Services.AddDbContext<FindTrainerDatabaseContext>(options => options.UseSqlServer(config));
 builder.Services.AddScoped<ISqlRepo<DataFluentApi.Entities.TrainerDetail>, EFRepo>();

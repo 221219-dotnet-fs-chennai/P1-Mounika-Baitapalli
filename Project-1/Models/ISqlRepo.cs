@@ -9,7 +9,12 @@ namespace Models
     public interface ISqlRepo<TrainerDetail>
     {
         //IEnumerable<DataFluentApi.Entities.TrainerDetail> GetGetAllTrainerDetail();
-        TrainerDetail AddTrainerDetail(TrainerDetail td);
+        
+
+      /*  EducationDetail AddEducatonDetail(EducationDetail edu);
+        CompanyDetail AddCompanyDetail(CompanyDetail cmpn);
+        SkillSet AddSkillSet(SkillSet ss);*/
+
 
         List<TrainerDetail> GetTrainer_Details();
 

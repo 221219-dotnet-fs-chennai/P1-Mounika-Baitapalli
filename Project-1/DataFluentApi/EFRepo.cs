@@ -13,7 +13,7 @@ namespace DataFluentApi
             _context = context;
         }
 
-        public Entities.TrainerDetail AddTrainerDetail(Entities.TrainerDetail td)
+        public TrainerDetail AddTrainerDetail(TrainerDetail td)
         {
             _context.TrainerDetails.Add(td);
             _context.SaveChanges();

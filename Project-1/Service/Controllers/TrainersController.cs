@@ -3,7 +3,7 @@ using DataFluentApi.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Caching.Memory;
+
 using Models;
 using System.Linq.Expressions;
 
@@ -14,21 +14,20 @@ namespace Service.Controllers
     public class TrainersController : ControllerBase
     {
         ITrainersLogic _logic;
-        IMemoryCache _cache;
-        public TrainersController(ITrainersLogic logic, IMemoryCache cache)
+       // IMemoryCache _cache;
+        public TrainersController(ITrainersLogic logic)
         {
             _logic = logic;
-            _cache = cache;
+           // _cache = cache;
         }
 
         [HttpPost("Add")]
         public ActionResult Add([FromBody] Trainer_Detail td)
-
         {
             try
             {
                 var addedTrainer_Detail = _logic.AddTrainerDetail(td);
-                return CreatedAtAction("Add", addedTrainer_Detail);
+                return Created("Add", addedTrainer_Detail);
             }
             catch (SqlException ex)
             {
@@ -40,7 +39,7 @@ namespace Service.Controllers
             }
         }
 
-        [HttpGet("all")]
+        /*[HttpGet("all")]
         public ActionResult Get()
         {
             try
@@ -62,9 +61,9 @@ namespace Service.Controllers
             {
                 return BadRequest(ex.Message);
             }
-        }
+        }*/
 
-        [HttpDelete("Delete/{name}")]
+        [HttpDelete("Delete/{Name}")]
         public ActionResult Delete(string Name)
         {
             try
@@ -91,7 +90,7 @@ namespace Service.Controllers
             
         }
 
-        [HttpPut("modify/{name}")]
+        [HttpPut("modify/{Name}")]
         public ActionResult Update([FromRoute] string Name,[FromBody]Trainer_Detail model)
         {
             try
