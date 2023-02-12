@@ -143,16 +143,23 @@ namespace Service.Controllers
         public ActionResult Login(string EmailId, string Password)
         {
             try
-            {
-                if (!string.IsNullOrEmpty(EmailId))
+            {    if(EmailId !=null)
                 {
-                    var mm = _logic.Login(EmailId, Password);
-                    return Ok("Successfully Logged in");
+                    if (!string.IsNullOrEmpty(EmailId))
+                    {
+                        var mm = _logic.Login(EmailId, Password);
+                        return Ok(" Logged in Successfully");
+                    }
+                    else
+                    {
+                        return BadRequest("enter a valid emailid and password");
+                    }
                 }
-                else
-                {
-                    return BadRequest("enter a valid emailid and password");
-                }
+                 else 
+                 {
+                    return BadRequest("Something wrong with input,try again");
+                 }
+                
             }
             catch (SqlException ex)
             {
