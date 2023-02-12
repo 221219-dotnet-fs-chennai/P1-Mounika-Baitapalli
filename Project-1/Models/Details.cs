@@ -112,7 +112,7 @@ namespace Models
         }
        
        
-        public string TrainerDetails()
+        public string AllDetails()
         {
             return $@"{Name}, {Age}, {Gender},{EmailId},{Password},{Contact_Number},{Location},{SocialMedia_Profile},{Skill_1}, {Skill_2}, {Skill_3}, {Company_Name},{Experience_In_Years},{Position},{Institution}, {Degree},{Specialization},{Year_Of_Passing}";
         }

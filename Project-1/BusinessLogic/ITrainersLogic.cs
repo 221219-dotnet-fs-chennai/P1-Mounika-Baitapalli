@@ -14,10 +14,10 @@ namespace BusinessLogic
         // Trainer_Detail GetTrainerDetailsByUser_Id(int id);
 
         Trainer_Detail AddTrainerDetail(Trainer_Detail trainer_detail);
-        /*Company_Detail AddCompanyDetail(Company_Detail td);
+        Company_Detail AddCompanyDetail(Company_Detail td);
          Education_Detail AddEducationDetail(Education_Detail td);
-         Skill_Set AddSkillSet(Skill_Set ss);
- */
+         Skill_Set AddSkillSet(Skill_Set s);
+ 
 
         IEnumerable<Trainer_Detail> GetAllTrainers();
         IEnumerable<Company_Detail> GetCompany_Details();
@@ -27,17 +27,25 @@ namespace BusinessLogic
 
 
 
-        Trainer_Detail RemoveTrainerDetailByName(string td);
-        /*Company_Detail RemoveCompanyDetailByUserId(int cd);
-        Skill_Set RemoveSkillSetByUserId(int ss);
-        Education_Detail RemoveEducationDetailByUserId(int ed);*/
+        //Trainer_Detail RemoveTrainerDetailByName(string td);
+        // Company_Detail DeleteCompanyDetail(int cd);
+        // Skill_Set DeleteSkillSet(int ss);
+        //Education_Detail DeleteEducationDetail(int ed);
 
-        Trainer_Detail UpdateTrainerDetail(string Name,Trainer_Detail td);
-        /*Education_Detail   UpdateEducationDetail(int UserId, Education_Detail education);
-        Skill_Set UpdateSkillSet(Skill_Set ss);
-        Company_Detail  UpdateCompanyDetail(Company_Detail td);
-*/
-       // Trainer_Detail GetTrainerDetailsByUser_Id(int id);
+        //Company_Detail DeleteCompanyDetail(Company_Detail cd);
+
+        Trainer_Detail DeleteTrainerDetail(int User_Id);
+
+
+
+
+
+        Trainer_Detail UpdateTrainerDetail(int User_Id, Trainer_Detail td);
+        Education_Detail   UpdateEducationDetail(int User_Id, Education_Detail ed);
+        Skill_Set UpdateSkillSet(int User_Id,Skill_Set ss);
+        Company_Detail  UpdateCompanyDetail(int User_Id, Company_Detail td);
+
+       
 
     }
 }

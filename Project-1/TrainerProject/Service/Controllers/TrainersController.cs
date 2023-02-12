@@ -57,45 +57,44 @@ namespace Service.Controllers
             }
         }
 
-        [HttpDelete("Delete/{Name}")]
-        public ActionResult Delete(string Name)
+    [HttpDelete("Delete/UserId")]
+    public ActionResult Delete(int User_Id)
+    {
+        try
         {
-            try
+            if (User_Id != null)
             {
-                if (!string.IsNullOrEmpty(Name))
-                {
-                    var rest = _logic.RemoveTrainerDetailByName(Name);
-                    if (rest != null)
-                        return Ok(rest);
-                    else
-                        return NotFound();
-                }
-                else
-                    return BadRequest("Please Add a valid trainer name to be deleted");
+                var del = _logic.DeleteTrainerDetail(User_Id);
+                return Ok(del);
             }
-            catch (SqlException ex)
+            else
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Please enter a valid trainer Userid to be deleted");
             }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-
+        }
+        catch (SqlException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
         }
 
-        [HttpPut("modify/{Name}")]
-        public ActionResult Update([FromRoute] string Name, [FromBody] Trainer_Detail model)
+    }
+
+        [HttpPut("Modify/{User_Id}")]
+        public ActionResult Update([FromRoute] int User_Id, [FromBody] Trainer_Detail model)
         {
             try
             {
-                if (!string.IsNullOrEmpty(Name))
+                if (User_Id !=null)
                 {
-                    _logic.UpdateTrainerDetail(Name, model);
+                    _logic.UpdateTrainerDetail(User_Id, model);
                     return Ok(model);
                 }
                 else
-                    return BadRequest($"something wrong with {model.Name}input,please try again!");
+                    return BadRequest($"something wrong with {model.User_Id} input,please try again!");
             }
             catch (SqlException ex)
             {
