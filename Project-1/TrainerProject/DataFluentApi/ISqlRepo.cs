@@ -12,7 +12,7 @@ namespace DataFluentApi
     {
         //IEnumerable<DataFluentApi.Entities.TrainerDetail> GetGetAllTrainerDetail();
 
-
+        
         DataFluentApi.Entities.TrainerDetail AddTrainerDetail(Entities.TrainerDetail trainer_detail);
         DataFluentApi.Entities.EducationDetail AddEducationDetail(Entities.EducationDetail edu);
         DataFluentApi.Entities.CompanyDetail AddCompanyDetail(Entities.CompanyDetail cmpn);
@@ -41,7 +41,7 @@ namespace DataFluentApi
         Entities.EducationDetail UpdateEducationDetail(Entities.EducationDetail ed);
 
 
-
+        bool Login(string EmailId,string Password);
 
 
     }

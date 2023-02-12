@@ -1,5 +1,0 @@
-2023-01-24 11:47:00.913 -05:00 [INF] -------Program starts here-------
-2023-01-24 11:49:06.692 -05:00 [INF] Trainers enter into menu page
-2023-01-24 11:51:33.059 -05:00 [INF] -------Program starts here-------
-2023-01-24 11:57:41.966 -05:00 [INF] -------Program starts here-------
-2023-01-24 11:59:22.839 -05:00 [INF] Trainers enter into menu page

@@ -13,7 +13,7 @@ namespace DataFluentApi
         public EFRepo(FindTrainerDatabaseContext context)
         {
             _context = context;
-        }
+        }       
 
         public TrainerDetail AddTrainerDetail(TrainerDetail t)
         {
@@ -57,60 +57,24 @@ namespace DataFluentApi
         }
 
 
-       /* public List<Entities.TrainerDetail>GetAllDetails()
+        /*public List<Entities.TrainerDetail> GetAllDetails()
         {
             return _context.TrainerDetails.ToList();
-            return _context.CompanyDetails.ToList();
-
         }*/
 
+        /* public Entities.TrainerDetail RemoveTrainerDetailByName(string Name)
+     {
+         var search = _context.TrainerDetails.Where(td => td.Name == Name).FirstOrDefault();
+         if (search != null)
+         {
+             _context.TrainerDetails.Remove(search);
+             _context.SaveChanges();
+         }
+
+         return search;
+     }*/
 
 
-
-        /*public Entities.TrainerDetail RemoveTrainerDetailByName(string Name)
-        {
-            var search = _context.TrainerDetails.Where(td => td.Name == Name).FirstOrDefault();
-            if (search != null)
-            {
-                _context.TrainerDetails.Remove(search);
-                _context.SaveChanges();
-            }
-
-            return search;
-        }
-        public Entities.EducationDetail DeleteEducationDetail(int User_Id) { 
-
-            var edd=_context.EducationDetails.Where(ed=>ed.UserId==User_Id).FirstOrDefault();
-            if (edd != null)
-            {
-                _context.EducationDetails.Remove(edd);
-                _context.SaveChanges();
-            }
-            return edd;
-        }
-
-        public Entities.CompanyDetail DeleteCompanyDetail(int User_Id)
-        {
-            var compp=_context.CompanyDetails.Where(cd=>cd.UserId==User_Id).FirstOrDefault();    
-            if(compp != null)
-            {
-                _context.CompanyDetails.Remove(compp);
-                _context.SaveChanges();
-            }
-            return compp;
-        }
-        public Entities.SkillSet DeleteSkillSet(int User_Id)
-        {
-            var skills=_context.SkillSets.Where(ss=>ss.UserId==User_Id).FirstOrDefault();
-            if(skills != null) {
-                _context.SkillSets.Remove(skills);
-                _context.SaveChanges();
-
-            }
-            return skills;
-        }*/
-
-        //Entities.TrainerDetail DeleteTrainerDetail(int User_Id);
 
         public Entities.TrainerDetail DeleteTrainerDetail(int User_Id)
         {
@@ -151,6 +115,34 @@ namespace DataFluentApi
             _context.SkillSets.Update(skills);
             _context.SaveChanges();
             return skills;
+        }
+
+
+
+        public bool Login(string EmailId, string Password)
+        {
+            var ll = _context.TrainerDetails;
+            var mm = ll.FirstOrDefault(x => x.EmailId == EmailId);
+
+            if (mm != null)
+            {
+                var obj = ll.FirstOrDefault(n => n.Password == Password);
+                if (obj != null)
+                {
+                    Console.WriteLine("Logged in successfully");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("You have Entered a Wrong Password, try again..");
+                    return false;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Something Wrong with your {mm.EmailId} input");
+                return false;
+            }
         }
 
     }

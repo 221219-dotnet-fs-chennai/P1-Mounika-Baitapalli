@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Models;
+using Serilog;
 
 namespace Service.Controllers
 {
@@ -18,6 +19,7 @@ namespace Service.Controllers
         [HttpGet("All")]
         public ActionResult Get()
         {
+
             try
             {
                 var get = _logic.GetEducation_Details().ToList();
@@ -26,15 +28,18 @@ namespace Service.Controllers
             catch (SqlException ex)
             {
                 return BadRequest(ex.Message);
+               
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
+            Log.Logger.Information("...Getting all trainer's education details...");
         }
         [HttpPost("Add")]
         public ActionResult AddEducationDetails([FromBody]Education_Detail ed)
         {
+            Log.Logger.Information("...Adding all trainer's education details...");
             try
             {
                 var add=_logic.AddEducationDetail(ed);
@@ -53,12 +58,14 @@ namespace Service.Controllers
         [HttpPut("modify/{User_Id}")]
         public ActionResult Update([FromRoute]int User_Id, [FromBody]Education_Detail ed)
         {
+            Log.Logger.Information("...Modifying trainer's education details...");
             try
             {
                 if (User_Id !=null)
                 {
                     var edu = _logic.UpdateEducationDetail(User_Id, ed);
                     return Created("Updated", edu);
+                    
                 }
                 else
                     return BadRequest($"something wrong with {ed.User_Id}input,please try again!");

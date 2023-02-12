@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hZxVLhhJus5uW1Y68SEUkemeGhzuXvDvJaSn/hnJEY8NCkybJDMX73e8v3Sa++sRdnrURuDn+nqmFRyKK7p5Tw==",
+  "dgSpecHash": "HvLYvvhvVruVij0ANsE6yRrz8J/IgTQlBwteM9wa4B3eiIB2O81qEehKVNxAibk/KN3DkuV/bupkxjAx2wlftA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\TrainerProject\\Service\\Service.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

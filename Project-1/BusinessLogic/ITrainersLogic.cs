@@ -10,6 +10,7 @@ namespace BusinessLogic
 {
     public interface ITrainersLogic
     {
+           
 
         // Trainer_Detail GetTrainerDetailsByUser_Id(int id);
 
@@ -17,6 +18,8 @@ namespace BusinessLogic
         Company_Detail AddCompanyDetail(Company_Detail td);
          Education_Detail AddEducationDetail(Education_Detail td);
          Skill_Set AddSkillSet(Skill_Set s);
+
+
  
 
         IEnumerable<Trainer_Detail> GetAllTrainers();
@@ -46,7 +49,10 @@ namespace BusinessLogic
         Skill_Set UpdateSkillSet(int User_Id,Skill_Set ss);
         Company_Detail  UpdateCompanyDetail(int User_Id, Company_Detail td);
 
-       
+
+        bool Login(string EmailId, string Password);
+
+
 
     }
 }

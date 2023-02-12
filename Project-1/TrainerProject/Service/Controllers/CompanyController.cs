@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Models;
+using Serilog;
 
 namespace Service.Controllers
 {
@@ -10,6 +11,7 @@ namespace Service.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
+         
 
         ITrainersLogic _logic;
         public CompanyController(ITrainersLogic logic)
@@ -19,6 +21,8 @@ namespace Service.Controllers
         [HttpGet("All")]
         public ActionResult Get()
         {
+
+            Log.Logger.Information("retriving All Company Details");
             try
             {
                 var get = _logic.GetCompany_Details();
@@ -31,12 +35,14 @@ namespace Service.Controllers
 
             catch (Exception ex)
             {
+                Log.Logger.Information("Exception occurred");
                 return BadRequest(ex.Message);
             }
         }
         [HttpPost("Add")]
         public ActionResult AddCompanyDetails([FromBody] Company_Detail cd)
         {
+            Log.Logger.Information("Adding Company Details");
             try
             {
                 var add = _logic.AddCompanyDetail(cd);
@@ -45,6 +51,7 @@ namespace Service.Controllers
             catch(SqlException ex)
             {
                 return BadRequest(ex.Message);
+                Log.Logger.Information("Sql Exception occurred");
             }
             catch(Exception ex)
             {
@@ -55,7 +62,7 @@ namespace Service.Controllers
         [HttpPut("Modify/{User_Id}")]
         public ActionResult Update([FromRoute]int User_Id,[FromBody] Company_Detail cd)
         {
-
+            Log.Logger.Information("Updating all Company Details");
             try
             {
                 
@@ -69,6 +76,7 @@ namespace Service.Controllers
 
                 else
                     return BadRequest($"something wrong with {cd.User_Id} input,please try again");
+                
             }
             catch(SqlException ex)
             {

@@ -22,12 +22,12 @@ namespace BusinessLogic
                 User_Id = t.UserId,
                 Name = t.Name,
                 Age = Convert.ToInt32(t.Age),
-                Gender = Validation.IsGenderValid(t.Gender),
-                EmailId =Validation.IsValidEmailId(t.EmailId),
-                Password = Validation.IsValidPassword(t.Password),
-                Contact_Number = Validation.IsContactNumberValid(t.ContactNumber),
+                Gender = Validations.IsGenderValid(t.Gender),
+                EmailId =Validations.IsValidEmailId(t.EmailId),
+                Password = Validations.IsValidPassword(t.Password),
+                Contact_Number = Validations.IsContactNumberValid(t.ContactNumber),
                 Location = t.Location,
-                SocialMedia_Profile = Validation.IsValidSProfile(t.SocialMediaProfile),
+                SocialMedia_Profile = Validations.IsValidSProfile(t.SocialMediaProfile),
 
             };
         }

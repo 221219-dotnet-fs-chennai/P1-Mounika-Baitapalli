@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Models;
+using Serilog;
 
 namespace Service.Controllers
 {
@@ -19,6 +20,7 @@ namespace Service.Controllers
         [HttpGet("All")]
         public ActionResult Get()
         {
+            Log.Logger.Information("Getting all Trainer's skills");
             try
             {
                 var get = _logic.GetSkill_Sets().ToList();
@@ -34,7 +36,9 @@ namespace Service.Controllers
             }
         }
         [HttpPost("Add")]
-        public ActionResult AddSkills([FromBody]Skill_Set s){
+        public ActionResult AddSkills([FromBody]Skill_Set s)
+        {
+            Log.Logger.Information("...Adding Trainer's skills......");
             try
             {
                 var add = _logic.AddSkillSet(s);
@@ -52,6 +56,7 @@ namespace Service.Controllers
         [HttpPut("Modify/{User_Id}")]
         public ActionResult Update([FromRoute]int User_Id, [FromBody]Skill_Set s)
         {
+            Log.Logger.Information("...Updating Trainer's skills......");
             try
             {
                 if(User_Id!=null)
@@ -61,6 +66,7 @@ namespace Service.Controllers
                 }
                 else
                     return BadRequest($"something wrong with {s.User_Id}  input,please try again!");
+                    Log.Logger.Information("Exception occurred,if we give enter wrong input");
             }
             catch(SqlException ex)
             {

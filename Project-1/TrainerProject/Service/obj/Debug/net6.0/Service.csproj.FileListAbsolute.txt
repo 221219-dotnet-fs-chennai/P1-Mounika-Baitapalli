@@ -83,3 +83,5 @@ C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Train
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\obj\Debug\net6.0\Service.pdb
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\obj\Debug\net6.0\Service.genruntimeconfig.cache
 C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\obj\Debug\net6.0\ref\Service.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\bin\Debug\net6.0\Serilog.dll
+C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\bin\Debug\net6.0\Serilog.Sinks.File.dll

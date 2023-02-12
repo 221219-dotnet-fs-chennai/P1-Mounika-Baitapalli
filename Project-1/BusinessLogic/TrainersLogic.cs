@@ -2,6 +2,7 @@
 using DataFluentApi.Entities;
 using Models;
 using System.Text.RegularExpressions;
+using Serilog;
 
 
 namespace BusinessLogic
@@ -15,6 +16,8 @@ namespace BusinessLogic
 
             _repo = repo;
         }
+
+       
 
         public Trainer_Detail AddTrainerDetail(Trainer_Detail trainer_detail)
         {
@@ -188,6 +191,11 @@ namespace BusinessLogic
                 return Mapper.CmpMap(company);
             
            
+        }
+
+        public bool Login(string EmailId, string Password)
+        {
+            return _repo.Login(EmailId, Password);
         }
     }
 }

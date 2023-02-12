@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+GpE5T4EHnMROuXc3BCCQIVJI04+lFUayEoy3W2Zdx5HC8gvfM5ikudy7zUmE4GPpu44gjh3/rSXdXI+n1GQCg==",
+  "dgSpecHash": "RLHY0HvWfvQivDOyhBB2hWJNsvFZJ60CgzXH//V7OIBpA+nPoTFlUa5z3O866VwAu4Tspz9sF1ChBZK9VRPtqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\Revature_Projects\\P1-Mounika-Baitapalli\\Project-1\\Models\\Models.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

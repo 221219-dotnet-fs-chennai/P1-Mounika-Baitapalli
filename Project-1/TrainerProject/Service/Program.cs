@@ -4,16 +4,21 @@ using DataFluentApi;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using Models;
-//using Serilog;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+Log.Logger = new LoggerConfiguration().WriteTo.File(@"C:\Users\Admin\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\TrainerProject\Service\Controllers\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                .CreateLogger();
+Log.Logger.Information(".....Program starts here.............");
+
+Log.Logger.Information(".....configuring connection with Database.............");
 
 var config = builder.Configuration.GetConnectionString("TrainerDbConnection");
 builder.Services.AddDbContext<FindTrainerDatabaseContext>(options => options.UseSqlServer(config));
@@ -22,7 +27,8 @@ builder.Services.AddScoped<ISqlRepo, EFRepo>();
 builder.Services.AddScoped<ITrainersLogic, TrainersLogic>();
 
 
-//Log.Logger.
+
+Log.Logger.Information(".....Application is Building here.............");
 
 var app = builder.Build();
 
@@ -39,4 +45,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+Log.Logger.Information(".....Application is Running here.............");
 app.Run();
