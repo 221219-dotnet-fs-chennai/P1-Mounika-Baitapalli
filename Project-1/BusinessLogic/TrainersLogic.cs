@@ -1,6 +1,7 @@
 ﻿using DataFluentApi;
 using DataFluentApi.Entities;
 using Models;
+using System.Text.RegularExpressions;
 
 
 namespace BusinessLogic
@@ -52,6 +53,10 @@ namespace BusinessLogic
             return Mapper.CmpMap(_repo.GetCompany_Details());
         }
 
+       /* public IEnumerable<Trainer_Detail> GetAllDetails()
+        {
+            return Mapper.TMap(_repo.GetAllDetails());
+        }*/
 
 
         public Trainer_Detail DeleteTrainerDetail(int User_Id)

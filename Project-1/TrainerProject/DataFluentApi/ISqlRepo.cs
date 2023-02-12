@@ -18,11 +18,14 @@ namespace DataFluentApi
         DataFluentApi.Entities.CompanyDetail AddCompanyDetail(Entities.CompanyDetail cmpn);
         DataFluentApi.Entities.SkillSet AddSkillSet(Entities.SkillSet ss);
 
+       // List<Entities.TrainerDetail> GetAllDetails();
 
         List<Entities.TrainerDetail> GetAllTrainers();
         List<Entities.CompanyDetail> GetCompany_Details();
         List<Entities.EducationDetail> GetEducation_Details();
         List<Entities.SkillSet> GetSkill_Sets();
+
+        
 
         /*Entities.TrainerDetail RemoveTrainerDetailByName(string Name);
         Entities.CompanyDetail DeleteCompanyDetail( int User_Id);

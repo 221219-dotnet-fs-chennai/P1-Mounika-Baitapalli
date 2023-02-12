@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Microsoft.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Service.Controllers
 {
@@ -56,6 +57,24 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /*[HttpGet("Retreive/{UserId}")]
+        public ActionResult GetAll(int User_Id)
+        {
+            try
+            {
+                var get = _logic.GetAllDetails().ToList();
+                return Ok(get);
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }*/
+
 
     [HttpDelete("Delete/UserId")]
     public ActionResult Delete(int User_Id)

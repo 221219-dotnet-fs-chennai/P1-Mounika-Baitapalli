@@ -24,6 +24,7 @@ namespace BusinessLogic
          IEnumerable<Skill_Set>GetSkill_Sets();
          IEnumerable<Education_Detail> GetEducation_Details();
 
+        //IEnumerable<Trainer_Detail>GetAllDetails();
 
 
 

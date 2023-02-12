@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFluentApi", "DataFluentApi\DataFluentApi.csproj", "{2443C886-FD5C-4F94-A6B5-DC4803FE49C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFluentApi", "DataFluentApi\DataFluentApi.csproj", "{2443C886-FD5C-4F94-A6B5-DC4803FE49C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "..\BusinessLogic\BusinessLogic.csproj", "{38399591-E87B-42D4-8E79-5B3E13E90262}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{6AD38843-7DAB-4B27-8A2F-81786124CF78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{CCEE421C-D4CB-4B05-9A5B-5BC671A647DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{CCEE421C-D4CB-4B05-9A5B-5BC671A647DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "TestProject\Test.csproj", "{F7776862-FAA3-4C39-A0CC-0E6E6890156B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CCEE421C-D4CB-4B05-9A5B-5BC671A647DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEE421C-D4CB-4B05-9A5B-5BC671A647DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCEE421C-D4CB-4B05-9A5B-5BC671A647DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7776862-FAA3-4C39-A0CC-0E6E6890156B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7776862-FAA3-4C39-A0CC-0E6E6890156B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7776862-FAA3-4C39-A0CC-0E6E6890156B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7776862-FAA3-4C39-A0CC-0E6E6890156B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

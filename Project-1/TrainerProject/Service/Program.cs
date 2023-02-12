@@ -2,7 +2,9 @@ using BusinessLogic;
 using DataFluentApi.Entities;
 using DataFluentApi;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 using Models;
+//using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,7 @@ builder.Services.AddScoped<ISqlRepo, EFRepo>();
 builder.Services.AddScoped<ITrainersLogic, TrainersLogic>();
 
 
+//Log.Logger.
 
 var app = builder.Build();
 

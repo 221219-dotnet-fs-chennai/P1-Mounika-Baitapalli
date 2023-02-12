@@ -57,6 +57,14 @@ namespace DataFluentApi
         }
 
 
+       /* public List<Entities.TrainerDetail>GetAllDetails()
+        {
+            return _context.TrainerDetails.ToList();
+            return _context.CompanyDetails.ToList();
+
+        }*/
+
+
 
 
         /*public Entities.TrainerDetail RemoveTrainerDetailByName(string Name)

@@ -2,49 +2,84 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace BusinessLogic
 {
     public class Validation
     {
-
-        public static TimeSpan HandleTimeSpanNulls(TimeSpan? time)
+        public static string IsValidEmailId(string EmailId)
         {
-            if(time.HasValue)
+            string regex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            if (!Regex.IsMatch(EmailId, regex))
             {
-                return time.Value;
-              
+                throw new Exception("Entered a wrong Email Pattern,try again!");
             }
-            return TimeSpan.Zero;
+            else
+            {
+                return EmailId;
+            }
         }
-        public static TimeSpan StringToTime(string strTime)
+        public static string IsGenderValid(string Gender)
         {
-
-            TimeSpan time = TimeSpan.Zero;
-            if (TimeSpan.TryParse(strTime, out time))
-                return time;
-            return TimeSpan.Zero;
-                
-                
-           
+            string regex = @"(?:m|M|male|Male|f|F|female|Female|FEMALE|MALE|Not prefer to say)$";
+            if (!Regex.IsMatch(Gender, regex))
+            {
+                throw new Exception("entered a wrong pattern,try again!");
+            }
+            else
+            { 
+                return Gender;
+            }
         }
-        /*Log.Logger.Information("enter a appropriate contact_Number");
-                    System.Console.Write("Enter your Contact_Number: ");
-                    string pattern2 = @"\(?\d{3}\)?(-|.|\s)?\d{3}(-|.)?\d{4}";
 
-        string Contact_Number = System.Console.ReadLine();
+        public static string IsContactNumberValid(string Contact_Number)
+        {
+            string regex = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+            
+                if(!Regex.IsMatch(Contact_Number, regex))
+                {
 
-                    if (Regex.IsMatch(Contact_Number, pattern2))
-                    {
-                        details.Contact_Number = Contact_Number;
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("You have entered a Wrong pattern,try again...");
-                        System.Console.ReadLine();
-                    }
-                   return "TSignUp";*/
+                throw new Exception("Entered a Wrong Contact Number pattern,try again..");
+                }
+                else
+                 { 
+                   return Contact_Number;
+                 }
+            
+            
+        }
+        public static string IsValidPassword(string Password)
+        {
+            string regex = @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+            if (!Regex.IsMatch(Password, regex))
+            {
+                throw new Exception("Entered a Wrong Password Pattern,try again ");
+            }
+            else
+            {
+                return Password;
+            }
+        }
+        public static string IsValidSProfile(string SProfile)
+        {
+            string regex = @"((http|https)://)(www.)?" +
+                 "[a-zA-Z0-9@:%._\\+~#?&//=]" +
+               "{2,256}\\.[a-z]" +
+              "{2,6}\\b([-a-zA-Z0-9@:%" +
+                   "._\\+~#?&//=]*)"; ;
+            if (!Regex.IsMatch(SProfile, regex))
+            {
+                throw new Exception("entered a wrong pattern,try again!");
+            }
+            else 
+            {
+                return SProfile;
+            }
+        }
+
 
 
     }

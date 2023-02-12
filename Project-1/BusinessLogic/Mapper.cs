@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Models;
 using DataFluentApi.Entities;
 using System.Net.Cache;
+using System.Text.RegularExpressions;
 using Azure;
 
 
@@ -21,12 +22,12 @@ namespace BusinessLogic
                 User_Id = t.UserId,
                 Name = t.Name,
                 Age = Convert.ToInt32(t.Age),
-                Gender = t.Gender,
-                EmailId = t.EmailId,
-                Password = t.Password,
-                Contact_Number = t.ContactNumber,
+                Gender = Validation.IsGenderValid(t.Gender),
+                EmailId =Validation.IsValidEmailId(t.EmailId),
+                Password = Validation.IsValidPassword(t.Password),
+                Contact_Number = Validation.IsContactNumberValid(t.ContactNumber),
                 Location = t.Location,
-                SocialMedia_Profile = t.SocialMediaProfile,
+                SocialMedia_Profile = Validation.IsValidSProfile(t.SocialMediaProfile),
 
             };
         }
