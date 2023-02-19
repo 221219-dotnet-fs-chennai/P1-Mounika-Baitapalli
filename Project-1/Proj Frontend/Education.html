@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1{
+        background-color:#fff;
+       
+    }
+    .educationsection{
+        background-color: rgb(114, 146, 146);
+        margin-top:50px;
+        margin-bottom:50px;
+        margin-right:50px;
+        margin-left:50px;
+        padding:2px;
+        border:10px lightgoldenrodyellow;
+        font-size:100px;
+    }
+    .input-field{
+        text-align: center;
+       line-height: 55px;
+        color: #acacac;
+       transition: 0.5s;
+       font-size: 300px;
+    }
+    body{
+        background-color:#fff;
+        background-image: url('img5.jpg');
+        background-size: cover;
+    }
+</style>
+<script src="Education.js">
+      crossorigin:"anonymous";
+</script>
+</head>
+ <body>
+<h1  style=font-size:90px; ><u></u>Trainer Education Details:</h1>
+   <div class="educationsection">
+         
+        <div class="input-field">
+           <i class="UserId"></i>
+           <input type="text" id="usd" placeholder="user_Id" style=font-size:40px; , font-color:lightpink; />
+        <div class="input-field">
+            <i class="Institution"></i>
+            <input type ="text"  id="i1" placeholder="institution" style=font-size:40px; , font-color:lightpink; />
+        </div>
+        <div class="input-field">
+            <i class="Degree"></i>
+            <input type="text" id="d1" placeholder="degree"  style=font-size:40px; ,font-color:lightpink; />
+        </div>
+        <div class="input-field">
+            <i class="Specialization"></i>
+            <input type="text" id="s1" placeholder="specialization" style=font-size:40px; />
+        </div>
+        <div class="input-field">
+            <i class="Year_Of_Passing"></i>
+            <input type="text"  id="y1" placeholder="year_Of_Passing" style=font-size:40px; />
+        </div>
+
+        <button type="button" onclick="Add()" id="ad1">Add </button>
+        <button type="button" onclick="GetallDetails()" id="getall1">GetallDetails</button>
+        <button type="button" onclick="Update()" id="upd1">Update Details</button>
+
+        <button type="button" onclick="history.back()"  class="btn solid" style=font-size:35px; >Go Back</button>
+        
+    </div>
+       
+</body>
+</html>

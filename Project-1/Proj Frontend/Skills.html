@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+      
+        <style>
+            body{
+                text-align: center;
+                /* background-color:#4481eb; */
+                background-image:url('img6.jpg');;
+                /* background-repeat: no-repeat; */
+                background-size: cover;
+            }
+            h1{
+                background-color:#fff;
+            }
+            /* .input-field{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+            } */
+            .SkillSection{
+               background-color: #4481eb;
+              margin-top:70px;
+               margin-bottom:70px;
+              margin-right:50px;
+             margin-left:50px;
+               padding:2px;
+             border:10px lightgoldenrodyellow;
+             font-size:100px;
+            }
+           .input-field{
+               text-align: center;
+               line-height: 55px;
+             color: #acacac;
+              transition: 0.5s;
+              font-size: 300px;
+            }
+        </style>
+        <script src="Skillset.js">
+            crossorigin:"anonymous";  
+        </script>
+        
+    </head>
+    <body>
+        <form>
+            <h1  style=font-size:80px; font-color:>
+                Trainer Skill Set :
+            </h1>
+            <div class="SkillSection">
+                
+                <!-- <p id="add" ></p>
+                <p id="Get"></p>
+                <p id="Update"></p> -->
+                <div class="input-field">
+                    <i class="userid"></i>
+                    <input type="text" id="uid" placeholder="user_Id" style=font-size:40px; , font-color:lightpink; />
+                </div>
+                <div class="input-field">
+                    <i class="skill1"></i>
+                    <input type ="text"  id="sk1" placeholder="skill_1" style=font-size:40px; , font-color:lightpink; />
+                
+                </div>
+                <div class="input-field">
+                    <i class="skill-2"></i>
+                    <input type="text" id="sk2" placeholder="skill_2"  style=font-size:40px; ,font-color:lightpink; />
+                    
+                </div>
+                <div class="input-field">
+                    <i class="skill-3"></i>
+                    <input type="text" id="sk3" placeholder="skill_3"  style=font-size:40px; ,font-color:lightpink; />
+                    
+                    
+                    
+                </div>
+                <button type="submit"  value="submit" style=font-size:20px;>Submit</button>
+                   
+                <!-- <div class="input-field">
+                    <input type="submit" value="Get all Skills"  style=font-size:20px;  />
+
+                </div> --> 
+
+                <button type="button" onclick="Add()" id="ad"  style=font-size:20px;>Add </button>
+                <button type="button" onclick="GetallDetails()" id="getall" style=font-size:20px;>GetallDetails</button>
+                <button type="button" onclick="Update()" id="upd" style=font-size:20px;>Update Skills</button>
+                <!-- <button type="button" onclick="Delete()" id="del">Delete Skills</button> -->
+                <!-- <input type="submit" value="Add Skills"  style=font-size:20px; />
+                <input type="submit" value="Get all Skills"  style=font-size:20px;  />
+                <input type="submit" value="Update Skills" style=font-size:20px; /> -->
+                <!-- <input type="submit" value="Delete Skills" style=font-size:20px;  /> -->
+                
+                <button type="button" onclick="history.back()"  class="btn solid" style=font-size:35px; >Go Back</button>
+                
+                 
+                <!-- <p id="Delete"></p> -->
+            </div>
+            <!-- <p id="demo"></p>
+            <button onclick='document.getElementByID=("demo").innerHTML="hello world" '>click me</button>
+            <button onclick="this.innerHTML=Date()">The time is?</button> -->
+            <!-- <script>
+                fetch('https://localhost:7031/api/Skill/All').then(res=>res.json())
+                .then(data=>{
+                    data.forEach(skill=>{
+                        const markup='<li>Skill-1:${user.Skill-1}</li>';
+                                     '<li>Skill-2:${user.Skill-2}</li>';
+                                     '<li>Skill-3:${user.Skill-3}</li>';
+                    })
+                     document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                });
+
+
+
+                
+            </script> -->
+        </form>
+    </body>
+</html>

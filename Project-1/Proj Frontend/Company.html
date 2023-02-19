@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1{
+            background-color:#fff;
+        }
+        body{
+            text-align:center;
+            background-color:aliceblue;
+            background-image: url('img1(2).jpg');
+            background-size: cover;
+        }
+      .CompanyDetailssection
+      {
+        background-color:aqua;
+        margin-top:90px;
+        margin-bottom:80px;
+        margin-right:90px;
+        margin-left:90px;
+        padding:1px;
+        border:10px lightgoldenrodyellow;
+        font-size:100px;
+       }
+       .input-field{
+            text-align: center;
+            line-height: 55px;
+            color: aqua;
+            transition: 0.5s;
+            font-size: 300px;
+        }
+    </style>
+    <script src="Company.js">
+       crossorigin:"anonymous";
+    </script>
+    
+</head>
+<body>
+    <h1 style=font-size:80px >Trainer Company Details:</h1>
+   <div class="CompanyDetailssection">
+
+          
+        <div class="input-field">
+           <i class="userid"></i>
+           <input type="text" id="usid" placeholder="user_Id" style=font-size:40px; , font-color:lightpink; />
+        </div>
+        <div class="input-field">
+            <i class="Company_Name"></i>
+            <input type ="text"  id="c1" placeholder="company_Name" style=font-size:40px; , font-color:lightpink; />
+        </div>
+        <div class="input-field">
+            <i class="Experience-In-Years"></i>
+            <input type="text" id="e1" placeholder="experience-In-Years"  style=font-size:40px; ,font-color:lightpink; />
+        </div>
+        <div class="input-field">
+            <i class="Position"></i>
+            <input type="text" id="p1" placeholder="position"  style=font-size:40px; ,font-color:lightpink; />
+        </div>
+
+                <button type="button" onclick="Add()" id="ad2" style=font-size:20px;>Add </button>
+                <button type="button" onclick="GetallDetails()" id="getall2" style=font-size:20px;>GetallDetails</button>
+                <button type="button" onclick="Update()" id="upd2" style=font-size:20px;
+                >Update Skills</button>
+                <!-- <button type="button" onclick="Delete()" id="del">Delete Skills</button> -->
+        <!-- <input type="submit" value="Add " style=font-size:20px; />
+        <input type="submit" value="Get all Details" style=font-size:20px ;/>
+        <input type="submit" value="Update  Details"  style=font-size:20px;/>
+        <input type="submit" value="Delete  Details" style=font-size:20px; /> -->
+            
+        <button type="button" onclick="history.back()"  class="btn solid" style=font-size:35px; >Go Back</button>
+    </div>
+       
+</body>
+</html>
