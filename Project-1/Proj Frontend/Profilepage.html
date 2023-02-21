@@ -32,33 +32,28 @@
             </div>
             <!-- <input type="submit" value="Login" id="sub" class="btn solid"/>  -->
             <button type="Submit" onclick="Login()" id="sub" class="btn solid">Login</button>
+            <!-- <button type="submit" onclick="Go" href="C:\Users\Admin\OneDrive\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Proj Frontend\DeleteAllDetails.html"> Go</button> -->
 
             <button type="button" onclick="history.back()"  class="btn solid" >Go Back</button>
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
+            <!-- <p class="social-text">Or Sign in with social platforms</p> -->
+            <!-- <div class="social-media">
+              <a href="www.facebook.com" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="www.twitter.com" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="https://www.google.com" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="www.linkedin.com" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-            </div>
+            </div> -->
             
           </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
+          <form action="#" class="sign-up-form" id="trainerdetails">
             <div class="trainerD">
-              <p id="trainerdetails">Trainer Details</p>
-              <div class="input-field1">
-                <i class="fas fa-user"></i>
-                <input type="text" id="udid" placeholder="user_Id" />
-              </div>
               <div class="input-field1">
                 <i class="fas fa-user"></i>
                 <input type="text" id="iname" placeholder="name" />
@@ -77,77 +72,25 @@
               </div>
               <div class="input-field1">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="pass" placeholder="password" />
+                <input type="password" id="password" placeholder="password" />
               </div>
               <div class="input-field1">
                 <i class="fas fa-phone"></i>
                 <input type="contact_Number" id="c1" placeholder="contact_Number"/>
               </div>
               <div class="input-field1">
-                <i class="material-icons"></i>
+                <i class="fa fa-material-icons"></i>
                 <input type="location" id="l1" placeholder="Location"/>
               </div>
               <div class="input-field1">
                 <i class="fa fa-linkedin-square"></i>
                 <input type="socialMedia_Profile" id="spf" placeholder="SocialMedia-Profile"/>
               </div>
-              
-              
-             <!-- <p id="Skill">Skill-Set</p>
-             <div class="input-field1">
-                <i class="Skill-1"></i>
-                <input type="Skill-1" placeholder="Skill-1"/>
-              </div>
-              <div class="input-field1">
-                <i class="Skill-2"></i>
-                <input type="Skill-2" placeholder="Skill-2"/>
-              </div>
-              <div class="input-field1">
-                <i class="Skill-3"></i>
-                 <input type="Skill-3" placeholder="Skill-3"/>
-              </div>
-              <p id="CompanyName">Company Details</p> -->
-              <!-- <div class="input-field1">
-                <i class="CompanyName"></i>
-                <input type="Company_Name" placeholder="CompanyName"/>
-              </div>
-              <div class="input-field1">
-                <i class="Experience-In-Years"></i>
-                <input type="Experience-In-Years" placeholder="Experience-In-Years"/>
-              </div>
-              <div class="input-field1">
-                <i class="Position"></i>
-                <input type="Position" placeholder="Position"/>
-              </div> -->
-              <!-- <p id="education">Education Details</p> -->
-             <!-- <div class="input-field1">
-               <i class="Institution"></i>
-               <input type="Institution" placeholder="Institution"/>
-              </div>
-             <div class="input-field1">
-               <i class="Degree"></i>
-               <input type="Degree" placeholder="Degree"/>
-              </div>
-              <div class="input-field1">
-                 <i class="Specialization"></i>
-                <input type="Specialization"  placeholder="Specialization"/>
-              </div>
-               <div class="input-field1">
-               <i class="Year_Of_Passing"></i>
-               <input type="Year_Of_Passing" placeholder="Year_Of_Passing"/>
-              </div> --> -->
-              <button type="button" onclick="Add()" style=font-size:15px;>Add Details </button>
-              <button type="button" onclick="Getall()" style=font-size:15px;>Get all Details </button>
-              <button type="button" onclick="Update()" style=font-size:15px;>Update Details </button>
-              <button type="button" onclick="Delete()" style=font-size:15px;>Delete Details </button>
-              <button type="button" onclick="history.back()" style=font-size:20px;> Go Back</button>
-              
+             
+              <button type="submit" class="btn" onclick="SignUp()" id="sign">Sign Up</button>
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <!-- <p class="social-text">Or Sign up with social platforms</p>
 
-            
-
-            <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -161,7 +104,7 @@
               <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-            </div>
+            </div> -->
           </form>
         </div>
       </div>
@@ -194,6 +137,7 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    
   </body>
+  <script src="app.js"></script>
 </html>

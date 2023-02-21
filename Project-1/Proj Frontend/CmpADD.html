@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CompanyAddform</title>
+        <style>
+            body{
+                background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD412RgpRXjcNdnQCE4CNDWCWAh2Zw3g_VeQ&usqp=CAU');
+                background-size: cover;
+            }
+            .input-field{
+                display: block;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form>
+            <div class="input-field">
+                <i class="Company_Name"></i>
+                <input type ="text"  id="c1" placeholder="company_Name" style=font-size:40px; , font-color:lightpink; />
+            </div>
+            <div class="input-field">
+                <i class="Experience-In-Years"></i>
+                <input type="text" id="e1" placeholder="experience-In-Years"  style=font-size:40px; ,font-color:lightpink; />
+            </div>
+            <div class="input-field">
+                <i class="Position"></i>
+                <input type="text" id="p1" placeholder="position"  style=font-size:40px; ,font-color:lightpink; />
+            </div>
+    
+                <button type="button" onclick="Add()" id="ad2" style=font-size:20px;>Add </button>
+    
+        </form>
+    </body>
+    <script>
+                  
+         function Add(){
+            let company=document.getElementById("c1").value
+            let exp=document.getElementById("e1").value
+            let pos=document.getElementById("p1").value
+
+        fetch(`https://localhost:7031/api/Company/Add`,{
+           method:"POST",
+           body:JSON.stringify({
+            company_Name:company,
+            experience_In_Years:exp,
+            position:pos
+            }),
+            headers:{
+            "Content-type":"application/json;charset=UTF-8",
+            
+             },
+
+          })
+       .then((Response)=>{
+        if(Response.status===200){
+            alert("successfully Added");
+            window.location.href='welcomepage.html';
+        }
+        else{
+            alert("wanna retry?");
+        }
+       })
+     }
+    
+    </script>
+                
+                        
+     
+</html>

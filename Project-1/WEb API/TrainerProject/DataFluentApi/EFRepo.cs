@@ -76,8 +76,10 @@ namespace DataFluentApi
 
 
 
-        public Entities.TrainerDetail DeleteTrainerDetail(int User_Id)
+        public Entities.TrainerDetail DeleteTrainerDetail(string EmailId)
         {
+            var res = _context.TrainerDetails.Where(e => e.EmailId == EmailId).FirstOrDefault();
+            var User_Id = res.UserId;
             var tds = _context.TrainerDetails.Where(a => a.UserId == User_Id).FirstOrDefault();
             var ed = _context.EducationDetails.Where(b => b.UserId == User_Id).FirstOrDefault();
             var cmp = _context.CompanyDetails.Where(c => c.UserId == User_Id).FirstOrDefault();

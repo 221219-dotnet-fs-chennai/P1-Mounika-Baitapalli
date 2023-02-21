@@ -38,7 +38,7 @@ namespace BusinessLogic
 
         //Company_Detail DeleteCompanyDetail(Company_Detail cd);
 
-        Trainer_Detail DeleteTrainerDetail(int User_Id);
+        Trainer_Detail DeleteTrainerDetail(string EmailId);
 
 
 

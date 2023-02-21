@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJCcrK9wJiGpBUdQKsIOhu2Ke2ffSixx9soQ&usqp=CAU');
+                background-size: cover;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form class="main">
+            <div class="input-field">
+                <i class="userid"></i>
+                <input type="text" id="uid" placeholder="user_Id" style=font-size:40px; , font-color:lightpink; />
+            </div>
+            <div class="input-field">
+                <i class="skill1"></i>
+                <input type ="text"  id="sk1" placeholder="skill_1" style=font-size:40px; , font-color:lightpink; />
+            
+            </div>
+            <div class="input-field">
+                <i class="skill-2"></i>
+                <input type="text" id="sk2" placeholder="skill_2"  style=font-size:40px; ,font-color:lightpink; />
+                
+            </div>
+            <div class="input-field">
+                <i class="skill-3"></i>
+                <input type="text" id="sk3" placeholder="skill_3"  style=font-size:40px; ,font-color:lightpink; />
+            </div>
+
+            <button type="button" onclick="Update()" id="upd" style=font-size:20px;>Update Skills</button>
+        </form>
+        
+    </body>
+         <script>
+            function Update(){
+            let user=document.getElementById("uid").value
+            let skill1=document.getElementById("sk1").value
+            let skill2=document.getElementById("sk2").value
+            let skill3=document.getElementById("sk3").value
+
+            fetch(`https://localhost:7031/api/Skill/Modify/${user}`,{
+                method:"PUT",
+                body:JSON.stringify({
+                    user_Id:user,
+                    skill_1:skill1,
+                    skill_2:skill2,
+                    skill_3:skill3
+                }),
+                headers:{
+                    "Content-type":"application/json;charset=UTF-8",
+                    
+                },
+
+            })
+            .then((Response)=>{
+                if(Response.status===201){
+                    alert("successfully updated");
+                    window.location.href='welcomepage.html';
+                }
+                else{
+                    alert("wanna retry?");
+                }
+            })
+          }
+        </script>
+</html>

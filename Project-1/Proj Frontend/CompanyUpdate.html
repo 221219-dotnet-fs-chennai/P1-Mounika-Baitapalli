@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <style>
+    body{
+        background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlkrYvnGIhDeE4BAl4bOnX7OHyLDh8n_CKMBBQnhXC7fUvW0HSAQ6qx2WZ6xTjcU1qmlQ&usqp=CAU');
+        background-size: cover;
+    }
+   </style>
+    </head>
+    <body>
+            <form class="menu">
+                <div class="input-field">
+                    <i class="userid"></i>
+                    <input type="text" id="usid" placeholder="user_Id" style=font-size:40px; , font-color:lightpink; />
+                 </div>
+                 <div class="input-field">
+                    <i class="Company_Name"></i>
+                    <input type ="text"  id="c1" placeholder="company_Name" style=font-size:40px; , font-color:lightpink; />
+                </div>
+                <div class="input-field">
+                    <i class="Experience-In-Years"></i>
+                    <input type="text" id="e1" placeholder="experience-In-Years"  style=font-size:40px; ,font-color:lightpink; />
+                </div>
+                <div class="input-field">
+                    <i class="Position"></i>
+                    <input type="text" id="p1" placeholder="position"  style=font-size:40px; ,font-color:lightpink; />
+                </div>
+
+                 <button  onclick="Update()" id="upd2" style=font-size:20px;>Update </button>
+
+            </form>
+    </body>
+    <script>
+             
+         function Update(){
+             let user=document.getElementById("usid").value
+            let company=document.getElementById("c1").value
+            let exp=document.getElementById("e1").value
+            let pos=document.getElementById("p1").value
+
+              fetch(`https://localhost:7031/api/Company/Modify/${user}`,{
+              method:"PUT",
+              body:JSON.stringify({
+            user_Id:user,
+            company_Name:company,
+            experience_In_Years:exp,
+            position:pos
+            }),
+            headers:{
+            "Content-type":"application/json;charset=UTF-8",
+            
+          },
+
+          })
+            .then((Response)=>{
+            if(Response.status===200){
+            alert("successfully updated");
+            window.location.href='welcomepage.html';
+            }
+           })
+        }
+    </script>
+</html>

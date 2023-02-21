@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <label >name</label>
+    <input type="name" id="name">
+    <label>age</label>
+    <input type="gender" id="gender">
+    <label >emailId</label>
+    <input type="emailId" id="emailId">
+    <label>password</label>
+    <input type="password" id="password">
+    <label>contact_Number</label>
+    <input type="contact_Number" id="contact_Number">
+    <label>location</label>
+    <input type="location" id="location">
+    <label>socialMedia_Profile</label>
+    <input type="socialMedia_Profile" id="socialMedia_Profile">
+    
+    <button onclick="signup()" id="signup_btn">submit</button>
+</body>
+<script>
+    function signup() {
+        const btn = document.getElementById("signup_btn")
+        btn.addEventListener("click", (e) => {
+            e.preventDefault()
+        })
+        fetch("https://localhost:7031/api/Trainer/Add", {
+            method: "POST",
+            body: JSON.stringify({
+                "name": document.getElementById("name").value,
+                "age": document.getElementById("age").value,
+                "gender": document.getElementById("gender").value,
+                "emailId": document.getElementById("email").value,
+                "password": document.getElementById("password").value,
+                "contact_Number": document.getElementById("contact_Number").value,
+                "location": document.getElementById("location").value,
+                "socialMedia_Profile": document.getElementById("socialMedia_Profile").value,
+            }),
+            headers:{"Content-type":"application/json;charset=UTF-8",},
+        }).then((res) => res.json())
+        //.then((json) => console.log(json))
+        .then((response)=>{
+            if(response.status===200){
+                alert("successfully sign up");
+                windows.location.href='welcomepage.html';
+            }
+            else{
+                alert("wanna retry?");
+            }
+        })
+    }
+</script>
+
+</html>

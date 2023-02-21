@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <style> 
+                body{
+                  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAYlGALTa38j10QM5c0SIdtCUXaA0aToXOg&usqp=CAU');
+                  background-size: cover;
+                }
+          </style>
+    </head>
+    <body>
+              
+        <form class="main">
+            <div class="input-field1">
+                <i class="fas fa-user"></i>
+                <input type="text" id="udid" placeholder="user_Id" />
+              </div>
+              <div class="input-field1">
+                <i class="fas fa-user"></i>
+                <input type="text" id="iname" placeholder="name" />
+              </div>
+              <div class="input-field1">
+                <i class="age"></i>
+                <input type="age" id="ag" placeholder="age"/>
+              </div> 
+              <div class="input-field1">
+                <i class="fas fa-mars"></i>
+                <input type="gender" id="g1" placeholder="gender"/>
+              </div>
+              <div class="input-field1">
+                <i class="fas fa-envelope"></i>
+                <input type="emailId" id="e1" placeholder="emailId" />
+              </div>
+              <div class="input-field1">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="pass" placeholder="password" />
+              </div>
+              <div class="input-field1">
+                <i class="fas fa-phone"></i>
+                <input type="contact_Number" id="c1" placeholder="contact_Number"/>
+              </div>
+              <div class="input-field1">
+                <i class="material-icons"></i>
+                <input type="location" id="l1" placeholder="Location"/>
+              </div>
+              <div class="input-field1">
+                <i class="fa fa-linkedin-square"></i>
+                <input type="socialMedia_Profile" id="spf" placeholder="SocialMedia-Profile"/>
+              </div>
+                  <button type="submit" onclick="Update()" id="tu1" style=font-size:30px>UPDATE</button>
+         </form>
+                
+    </body>
+         
+        <script>
+                              
+                    function Update(){
+                     let user=document.getElementById("udid").value
+                     let nam=document.getElementById("iname").value
+                     let ag=document.getElementById("ag").value
+                    let gend=document.getElementById("g1").value
+                     let em=document.getElementById("e1").value
+                    let pas=document.getElementById("pass").value
+                   let cn=document.getElementById("c1").value
+                 let lc=document.getElementById("l1").value
+                let social=document.getElementById("spf").value
+
+                 fetch(`https://localhost:7031/api/Trainer/Modify/${user}`,{
+                method:"PUT",
+                 body:JSON.stringify({
+                user_Id:user,
+                name:nam,
+               age:ag,
+              gender:gend,
+                 emailId:em,
+                password:pas,
+              contact_Number:cn,
+               location:lc,
+              socialMedia_Profile:social
+                }),
+              headers:{
+            "Content-type":"application/json;charset=UTF-8",
+            
+               },
+
+             })
+             .then(Response=>{
+              if(Response.status===201){
+                 alert("successfully updated");
+                window.location.href='welcomepage.html';
+                }
+             })
+                 }
+         </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpUfLWtWAoBVN6oNLW3aRcmQwV67mIE_Vmuw&usqp=CAU');
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="menu">
+        <button type="submit" onclick="getEdu()" id="getT"  style=font-size:30px>Get All Education Details</button>
+    </div>
+    <ol>
+
+    </ol>
+</body>
+
+      <script>
+        function getEdu(){
+               fetch('https://localhost:7031/api/Education/All').then(response=>response.json())
+               .then(data=>data.forEach(user=>
+               {
+                const markup=`<li>
+                                     Institution:${user.institution}<br>
+                                     Degree:${user.degree}<br>
+                                     Specialization:${user.Specialization}<br>
+                                     Year_Of_Passing:${user.Year_Of_Passing}<br>
+                                     </li>`
+                         document.querySelector("ol").insertAdjacentHTML('beforeend', markup);
+                                    }
+               ))
+                                }
+                
+               
+      </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+    </head>
+    <body>
+      <form>
+        <form  class="sign-up-form" id="">
+            <div class="trainerD">
+                <!-- <div class="input-field1">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="udid" placeholder="user_Id" />
+                </div> -->
+                <div class="input-field1">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="iname" placeholder="name" />
+                </div>
+                <div class="input-field1">
+                  <i class="age"></i>
+                  <input type="age" id="ag" placeholder="age"/>
+                </div> 
+                <div class="input-field1">
+                  <i class="fas fa-mars"></i>
+                  <input type="gender" id="g1" placeholder="gender"/>
+                </div>
+                <div class="input-field1">
+                  <i class="fas fa-envelope"></i>
+                  <input type="emailId" id="e1" placeholder="emailId" />
+                </div>
+                <div class="input-field1">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="pass" placeholder="password" />
+                </div>
+                <div class="input-field1">
+                  <i class="fas fa-phone"></i>
+                  <input type="contact_Number" id="c1" placeholder="contact_Number"/>
+                </div>
+                <div class="input-field1">
+                  <i class="material-icons"></i>
+                  <input type="location" id="l1" placeholder="Location"/>
+                </div>
+                <div class="input-field1">
+                  <i class="fa fa-linkedin-square"></i>
+                  <input type="socialMedia_Profile" id="spf" placeholder="SocialMedia-Profile"/>
+                </div>
+            
+            <button onclick="Add()" id="trainerdetails">Submit</button></a>
+            </div>
+        </form>
+      </form>
+    </body>
+    <script>  
+
+       function Add(){
+          let nam=document.getElementById("iname").value;
+           let ag=document.getElementById("ag").value;
+           let gend=document.getElementById("g1").value;
+           let em=document.getElementById("e1").value;
+           let pas=document.getElementById("pass").value;
+           let cn=document.getElementById("c1").value;
+           let lc=document.getElementById("l1").value;
+           let social=document.getElementById("spf").value;
+
+          fetch(`https://localhost:7031/api/Trainer/Add`,{
+           method:"POST",
+           body:JSON.stringify({
+          name:nam,
+          age:ag,
+          gender:gend,
+          emailId:em,
+          password:pas,
+          contact_Number:cn,
+          location:lc,
+          socialMedia_Profile:social
+         }),
+         headers:{
+            "Content-type":"application/json;charset=UTF-8",
+            
+         },
+
+         })
+             .then((Response)=>{
+            if(Response.status===200){
+             alert("successfully Added");
+              window.location.href='welcomepage.html';
+              }
+             else{
+              alert("wanna retry");
+              }
+           })
+        }
+      
+    </script>
+
+    
+  
+</html>

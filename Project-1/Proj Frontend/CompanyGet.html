@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+              body{
+                background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAtDhOZ8WS86oqQntzORskZcEwORlILZwV7Q&usqp=CAU');
+                background-size: cover;
+              }
+      </style>
+    </head>
+    <body>
+        <button type="submit"  onclick="GetAll()" id="getcmp"  style=font-size:30px>Get All Company Details</button>
+        <ol>
+            
+        </ol>
+    </body>
+    <script>
+              function GetAll(){
+             fetch('https://localhost:7031/api/Company/All')
+             .then(response=>response.json())
+               .then(data=>data.forEach(user=>
+               {
+                    const markup=`<li>
+                                    CompanyName:${user.company_Name}<br>
+                                     Experience_In_Years:${user.experience_In_Years}<br>
+                                     Position:${user.position}
+                                     </li>`
+                         document.querySelector("ol").insertAdjacentHTML('beforeend', markup);
+                                    }
+               ))
+                                }
+    </script>
+</html>

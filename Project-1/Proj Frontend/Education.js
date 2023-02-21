@@ -65,8 +65,11 @@
                 window.location.href='welcomepage.html';
             }
             else{
-                   alert("Retry?");
+                   alert("Wanna Retry?");
             }
         })
     }
+
+
+    
 

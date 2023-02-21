@@ -1,9 +1,13 @@
 // function getItems(){
     fetch('https://localhost:7031/api/Company/All')
     .then(res=>res.json())
-    .then(data=>console.log(data));
+    .then(data=>console.log(data))
+    
+        
+
+    
     // .catch(error=>console.error('unable to get items',error));
-// }
+// 
 
 function Update(){
     let user=document.getElementById("usid").value

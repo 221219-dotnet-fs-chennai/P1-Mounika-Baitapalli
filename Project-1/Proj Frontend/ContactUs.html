@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <style>
+    input[type=text],select,textarea{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:4px;
+        box-sizing: border-box;
+        margin-top:6px;
+        margin-bottom:15px;
+        resize:vertical;
+        
+    }
+    input[type=submit]{
+        background-color:aqua;
+        color:white;
+        padding:12px 20px;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+    }
+    input[type=submit]:hover{
+        background-color:aquamarine;
+    }
+    .container{
+        border-radius:5px;
+        background-color: #f2f2f2;
+        padding:20px;
+    }
+ </style>
+    </head>
+    <body>
+        
+            <div class="container">
+
+                <form>
+                    <label>First Name</label>
+                    <input type="text" id="fname" name="FirstName" placeholder="your first name">
+                    <label>Last Name</label>
+                    <input type="text" id="lname" name="SecondName" placeholder="your last name">
+                    <label>Contact Number</label>
+                    <input type="text" id="cnumber" name="phonenumber" placeholder="your contact number">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UsA">USA</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                    <label>Subject</label>
+                    <textarea id="subject" name="subject" placeholder="write something..." style="height:200px">Subject</textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        
+    </body>
+</html>

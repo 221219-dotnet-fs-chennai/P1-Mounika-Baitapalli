@@ -62,9 +62,9 @@ namespace BusinessLogic
         }*/
 
 
-        public Trainer_Detail DeleteTrainerDetail(int User_Id)
+        public Trainer_Detail DeleteTrainerDetail(string EmailId)
         {
-            var deleteobj = _repo.DeleteTrainerDetail(User_Id);
+            var deleteobj = _repo.DeleteTrainerDetail(EmailId);
             if (deleteobj != null)
             {
                 return Mapper.TMap(deleteobj);

@@ -6,6 +6,7 @@ using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
 using Serilog;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Service.Controllers
 {
@@ -85,23 +86,31 @@ namespace Service.Controllers
         }*/
 
 
-    [HttpDelete("Delete/UserId")]
-    public ActionResult Delete(int User_Id)
+    [HttpDelete("Delete/EmailId")]
+    public ActionResult Delete(string EmailId)
     {
 
             Log.Logger.Information("...Deleting all  Trainer's  Details......");
             try
-        {
-            if (User_Id != null)
             {
-                var del = _logic.DeleteTrainerDetail(User_Id);
-                return Ok(del);
+                if (EmailId != null)
+                {
+                    if (!string.IsNullOrEmpty(EmailId))
+                    {
+                        var del = _logic.DeleteTrainerDetail(EmailId);
+                        return Ok(del);
+                    }
+                    return BadRequest("Try again");
+
+                }
+
+                else
+                {
+                    return BadRequest($"Please enter a valid trainer Userid to be deleted");
+                }
             }
-            else
-            {
-                return BadRequest($"Please enter a valid trainer Userid to be deleted");
-            }
-        }
+                
+        
         catch (SqlException ex)
         {
             return BadRequest(ex.Message);

@@ -23,7 +23,9 @@
            font-family:Arial, Helvetica, sans-serif;
         }
         .topnav{
-            background-color:#4481eb;
+             background-color:#4481eb; 
+              /* background-color:azure; */
+             /* background-color:#f2f2f2; */
             overflow: hidden;
             padding-left: 10px;
             /* background-color:slategrey; */
@@ -37,6 +39,7 @@
            font-size:17px;
         }
         .topnav a:hover{
+            /* background-color:#4481eb; */
             background-color:#ddd;
             color:black;
         }
@@ -44,7 +47,7 @@
             background-color: #04AA6D;
             color:white;
         }
-        .topnav .search-container{
+        .topnav .search{
             float:right;
             padding-left: 10px;
           }
@@ -54,7 +57,7 @@
            font-size: 17px;
             border: none;
            }
-        .topnav .search-container button{
+        .topnav .search button{
             float: right;
             padding: 2px 5px;
             margin-top: 8px;
@@ -64,22 +67,22 @@
              border: none;
             cursor: pointer;
            }
-        .topnav .search-container button:hover {
+        .topnav .search button:hover {
             background: #ccc;
             }
         
          @media screen and (max-width:200px){
-            .topnav .search-container{
+            .topnav .search{
                 float:none;
             }
-            .topnav a, .topnav input[type=text], .topnav .search-container button {
+            /* .topnav a, .topnav input[type=text], .topnav .search button {
             float: none;
             display: block;
             text-align: left;
            width: 100%;
            margin: 0;
            padding: 14px;
-             } 
+             }  */
             .topnav input[type=text] {
                border: 1px solid #ccc;  
              }
@@ -88,6 +91,21 @@
             {
                 background-color: aqua;
          }
+         .search{
+            float:right;
+            margin:7px;
+ 
+        }
+        .search button{
+               background-color:#0074D9;
+               color:#f2f2f2;
+               float:right;
+               padding:2px 3px;
+               margin-right:10px;
+               font-size:10px;
+               border:none;
+               cursor:pointer;
+        }
         
        </style>
     </head>
@@ -99,17 +117,26 @@
                             <div class="topnav">                               
                                 
                                 <a class="welcomemenu" href="welcomepage.html" ><i class="fa fa-home"> </i>Home</a>
-                                <a href="Profilepage.html">User-Profile</a>
-                                  <a href="Education.html">EducationSection </a>
-                                  <a href="Skills.html"> Skills</a>
-                                  <a href="Company.html">CompanySection</a>
-
-                                <input type="text" placeholder="Search" name="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <!-- <a href="Profilepage.html">User-Profile</a> -->
+                                  <a href="GETAll.html">Trainer All Details Section </a>
+                                  <a href="AddDetails.html">Add Details</a>
+                                  <a href="UpdateDetail.html">Update Details</a>
+                                  <a href="DeleteAllDetails.html">Delete Trainer Details </a>
+                                  <a href="AboutMe.html">About Me</a>
+                                  <a href="ContactUs.html">Contact Us</a>
+                                  
+                                   <div class="search">
+                                       <input type="text" placeholder="Search" name="search">
+                                       
+                                       <button>
+                                        <i class="fa fa-search" style=font-size:20px;></i>
+                                       </button>
+                                    </div>
+                                
                                 <p class="about me:"></p>
 
-                                 <img src="C:\Users\Admin\OneDrive\Pictures\Proj Frontend\trainerimg.jpg" alt="TrainerImage" width="1100px"/>
-                                 <button type="button" onclick="history.back()"  class="btn solid" style=font-size:30px;>Go Back</button>
+                                 <img src="C:\Users\Admin\OneDrive\Documents\Revature_Projects\P1-Mounika-Baitapalli\Project-1\Proj Frontend\welcomeimg.png" alt="TrainerImage" width="1100px"/>
+                                 <!-- <button type="button" onclick="history.back()"  class="btn solid" style=font-size:30px;>Go Back</button> -->
                             </div>
                            
                           

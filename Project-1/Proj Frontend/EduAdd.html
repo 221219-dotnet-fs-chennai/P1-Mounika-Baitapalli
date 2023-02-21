@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToQqD6Hz1oimAv4JonTbO_j9zVA6e9p7HmfQ&usqp=CAU');
+                background-size: cover;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="menu">
+            <div class="input-field">
+                <i class="Institution"></i>
+                <input type ="text"  id="i1" placeholder="institution" style=font-size:40px; , font-color:lightpink; />
+            </div>
+            <div class="input-field">
+                <i class="Degree"></i>
+                <input type="text" id="d1" placeholder="degree"  style=font-size:40px; ,font-color:lightpink; />
+            </div>
+            <div class="input-field">
+                <i class="Specialization"></i>
+                <input type="text" id="s1" placeholder="specialization" style=font-size:40px; />
+            </div>
+            <div class="input-field">
+                <i class="Year_Of_Passing"></i>
+                <input type="text"  id="y1" placeholder="year_Of_Passing" style=font-size:40px; />
+            </div>
+
+            <button type="button" onclick="Add()" id="ad1"  style=font-size:30px>Add </button>
+
+        </div>
+    </body>
+    <script>
+                  
+        function Add(){
+        let instit=document.getElementById("i1").value;
+        let deg=document.getElementById("d1").value;
+        let specia=document.getElementById("s1").value;
+        let year=document.getElementById("y1").value;
+        fetch(`https://localhost:7031/api/Education/Add`,{
+            method:"POST",
+            body:JSON.stringify({
+                institution:instit,
+                degree:deg,
+                specialization:specia,
+                year_Of_Passing:year
+            }),
+            headers:{
+                'Accept': 'application/json',
+                "Content-type":"application/json;charset=UTF-8",
+                
+            },
+    
+        })
+        .then((Response)=>{
+            if(Response.status===200){
+                alert("successfully added");
+                window.location.href='welcomepage.html';
+            }
+            else{
+                   alert("Wanna Retry?");
+            }
+        })
+    }
+    </script>
+</html>

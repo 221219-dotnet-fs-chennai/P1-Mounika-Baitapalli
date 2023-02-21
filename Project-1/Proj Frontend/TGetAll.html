@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+            body{
+              background-image:url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');
+              background-size: cover;
+            }
+       </style>
+    </head>
+    <body>   
+           <div class="menu">
+              <button type="submit" onclick="TGet()" id="getT"  style=font-size:30px>Get All Trainer Details</button>
+            </div>
+            <ol>
+                
+            </ol>
+    </body>
+
+    <script>
+             function TGet(){
+              fetch('https://localhost:7031/api/Trainer/all').then(response=>response.json())
+               .then(data=>data.forEach(user=>
+               {
+                const markup=`<li>User_Id:${user.user_Id}<br>
+                                     Name:${user.name}<br>
+                                     Age:${user.age}<br>
+                                     Gender:${user.gender}<br>
+                                     EmailId:${user.emailId}<br>
+                                     Password:${user.password}<br>
+                                     Contact_Number:${user.contact_Number}<br>
+                                     Location:${user.location}<br>
+                                     SocialMedia_Profile:${user.socialMedia_Profile}
+
+                                     </li>`
+                         document.querySelector("ol").insertAdjacentHTML('beforeend', markup);
+               }
+
+               ))
+             }
+    </script>
+</html>

@@ -33,7 +33,7 @@ namespace DataFluentApi
         Entities.SkillSet DeleteSkillSet(int User_Id);
           */
 
-       Entities.TrainerDetail DeleteTrainerDetail(int User_Id);
+       Entities.TrainerDetail DeleteTrainerDetail(string EmailId);
 
         Entities.TrainerDetail UpdateTrainerDetail(Entities.TrainerDetail td);
         Entities.CompanyDetail UpdateCompanyDetail(Entities.CompanyDetail cmp);

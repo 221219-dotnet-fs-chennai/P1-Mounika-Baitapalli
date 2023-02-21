@@ -19,9 +19,9 @@ select * from Company_Details;
 select * from Education_Details;
 
 /*inserting values into Trainer_Details: */
-insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Mounika',21,'Female','mounika@yahoo.com','mounika@123',8787656543,'Chittoor','www.mona.com');
-insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Jessy',22,'Male','Jessy@yahoo.com','Jessy@123',9987654213,'Ongole','www.jessydance_school.com');
-insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Ram',23,'Male','Ram@gmail.com','Ram@123',8899432165,'Bangalore','www.ramsinger.com');
+insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Mounika',21,'Female','mounika@yahoo.com','Mounika@123',8787656543,'Chittoor','https://www.mona.com');
+insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Jessy',22,'Male','Jessy@yahoo.com','Jessyrd@123',9987654213,'Ongole','https://www.jessydance.com');
+insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Ram',23,'Male','Ram@gmail.com','Ramram@123',8899432165,'Bangalore','https://www.ramsinger.com');
 
 /*inserting values into Skill_Set: */
 insert into Skill_Set(Skill_1,Skill_2,Skill_3)values('Python','Mysql','Azure');
@@ -41,3 +41,8 @@ insert into Education_Details(Institution,Degree,Specialization,Year_Of_Passing)
 insert into Education_Details(Institution,Degree,Specialization,Year_Of_Passing)values('IIt-Delhi','B-Tech','CS',2019);
 
 alter table Trainer_Details Alter column User_Id Int;
+
+delete from Trainer_Details where name='raj';
+
+
+select *  from Trainer_Details;
