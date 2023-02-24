@@ -41,7 +41,7 @@
             let skill2=document.getElementById("sk2").value
             let skill3=document.getElementById("sk3").value
 
-            fetch(`https://localhost:7031/api/Skill/Modify/${user}`,{
+            fetch('https://localhost:7031/api/Skill/Modify/${user}',{
                 method:"PUT",
                 body:JSON.stringify({
                     user_Id:user,
@@ -56,7 +56,7 @@
 
             })
             .then((Response)=>{
-                if(Response.status===201){
+                if(Response.status===200){
                     alert("successfully updated");
                     window.location.href='welcomepage.html';
                 }
