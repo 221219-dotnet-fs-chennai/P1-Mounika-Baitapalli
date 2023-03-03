@@ -1,4 +1,43 @@
-remove duplicates from array:
+
+program1: Merge two sorted arrays :
+
+
+Console.WriteLine("enter size of an array1:");
+         int n=Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("enter an array1:");
+        int[] arr1=new int[n];
+        
+        for(int i=0;i<arr1.Length;i++){
+          arr1[i]=Convert.ToInt32(Console.ReadLine());
+        }
+
+         Console.WriteLine("enter size of an array2:");
+         int m=Convert.ToInt32(Console.ReadLine());
+
+         Console.WriteLine("enter an array2:");
+         
+        int[] arr2=new int[m];
+        
+        for(int i=0;i<arr1.Length;i++){
+          arr2[i]=Convert.ToInt32(Console.ReadLine());
+        }
+          int z=n+m;
+          int[] merge=new int[z];
+          int j=0;
+
+          for(int i=0;i<n;i++){
+                 merge[j++]=arr1[i];
+          }
+          for(int i=0;i<m;i++){
+            merge[j++]=arr2[i];
+          }
+          Array.Sort(merge);
+          for(int i=0;i<z;i++){
+            Console.WriteLine(" "+merge[i]+" ");
+          }
+
+program2:Remove duplicates from an array
 
 class Solution{
 
@@ -40,8 +79,221 @@ class Solution{
     }
     
 }
+program3:Count the frequency of an element in an array:
+ using System;
+class Solution
+{
+    public static void Main(string[] args)
+    {
+           
+        
+        int[] arr={ 4, 2, 0, 8, 20, 9, 2};
+        int[] fr = new int[arr.Length];
+        int v = -1;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int count = 1;
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    count++;
+                     
+                    fr[j] = v;
+                }
+            }
+            if (fr[i] != v)
+                fr[i] = count;
+        }
+        Console.WriteLine(" Element | Frequency");
+        
+        for (int i = 0; i < fr.Length; i++)
+        {
+            if (fr[i] != v)
+                Console.WriteLine("    " + arr[i] + "    |    " + fr[i]);
+        }
+    }
+}
+program4: Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
-remove vowels from string:
+It is important to note that you CANNOT use the same element in the array twice, but you can assume that there will only be ONE solution for each test case.
+
+using System;
+ class solution{
+    public static void Main(string[] args){
+        Console.WriteLine("Enter Array size");
+        int n=Convert.ToInt32(Console.ReadLine());
+        int[] a=new int[n];
+        Console.WriteLine("Enter Array Elements");
+        for(int i=0;i<n;i++){
+            a[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Enter Target Element:");
+        int t=Convert.ToInt32(Console.ReadLine());
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==j)
+                    continue;
+                else{
+                    if(a[i]+a[j]==t){
+                        Console.WriteLine("["+i+","+j+"]");
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+program5: Given an array A[] of size n, you need to find the maximum and minimum element present in the array. Your algorithm should make the minimum number of comparisons.
+
+using System;
+
+class Program
+{
+    public static void Main(string[] args){
+        Console.WriteLine("enter array1 size:");
+        int a=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter array 1 elmements:");
+        int[] arr1=new int[a];
+        for(int i=0;i<a;i++){
+            arr1[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        int max=0;
+        int min=0;
+        
+        for(int i=0;i<a-1;i++){
+            if(arr1[i]>max){
+                max=arr1[i];
+            }
+        }
+        for(int i=0;i<a-1;i++){
+            if(arr1[i]<min){
+                min=arr1[i];
+            }
+        }
+          Console.WriteLine("maximum element:"+ max + "minimum element:"+min);
+       
+    }
+}
+program6:Given a sorted array arr[] consisting of N distinct integers and an integer K, the task is to find the index of K, if it’s present in the array arr[]. Otherwise, find the index where K must be inserted to keep the array sorted.
+
+
+using System;
+
+class Program
+{
+    public static void Main(string[] args){
+Console.WriteLine("enter size of an array:");
+        int a=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter element to search for:");
+        int k=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter elements:");
+        int[] arr=new int[a];
+        for(int i=0;i<a;i++){
+          arr[i]=Convert.ToInt32(Console.ReadLine());
+
+        }
+        for(int i=0;i<a;i++){
+          
+          if(arr[i]==k){
+            Console.WriteLine("index of an array:"+i);
+            break;
+          }
+          else if(arr[i]>k){
+            Console.WriteLine("index of an array:"+i);
+            break;
+          }
+          
+        }
+}
+}
+program7: Given an array of n integers, find the third largest element. All the elements in the array are distinct integers. 
+using System;
+class Sol{
+     public static void Main(string[]args){
+         Console.WriteLine("enter array 1 size:");
+         int n=Convert.ToInt32(Console.ReadLine());
+         int[] arr=new int[n];
+          Console.WriteLine("enter array 1 elements");
+         for(int i=0;i<n;i++){
+             arr[i]=Convert.ToInt32(Console.ReadLine());
+         }
+         Array.Sort(arr);
+ 
+         
+         Console.WriteLine("printing third largest element i:"+arr[n-3]);
+}
+}
+
+program8:Given an array of integers arr[] of size N and an integer, the task is to rotate the array elements to the left by d positions.
+
+
+using System;
+
+class Program
+{
+    public static void Main(string[] args){
+    int[] arr={1,2,3,4,5,6,7};
+       int d=2;
+       for(int i=2;i<arr.Length;i++){
+        Console.WriteLine(arr[i]);
+       }
+       for(int i=0;i<d;i++){
+        Console.WriteLine(arr[i]);
+       }
+
+    }
+}
+
+program9:Given an integer array, find a triplet having the maximum product.
+
+using System;
+
+class Program
+{
+    public static void Main(string[] args){
+
+
+Console.WriteLine("Enter the Size of an array:");
+        int m = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[n];
+        int c = 0;
+        Console.WriteLine("Enter Array Elements");
+        for (int i = 0; i < m; i++)
+        {
+           arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        int MaxSum=int.Min;
+        int x = 0, y = 0, z = 0 ;
+        Console.WriteLine("Triplets whose maximum product are: ");
+        for (int i = 0; i < m; i++)
+        {
+           for (int j = i + 1; j < m; j++)
+           {
+               for (int k = j + 1; k < m; k++)
+               {
+                   if(arr[i] * arr[j] * arr[k] > MaxSum)
+                   {
+                       MaxSum= arr[i] * arr[j]* arr[k];
+                       x = arr[i];
+                       y= arr[j];
+                       z = arr[k];
+                   }
+               }
+           }
+        }
+        Console.WriteLine(x + " " + y + " " + z);
+}
+}
+
+strings:
+
+
+
+program1:remove vowels from string:
 
 using System.Collections.Generic;
 using System.Linq;
@@ -63,21 +315,8 @@ class Sol{
     }
 }
 
-convertion of uppercase letters to lowercase in a string:
 
-using System;
-class Sol{
-    public static void Main(string[]args){
-        Console.WriteLine("enter a uppercase string:");
-        string mystring=Console.ReadLine();
-        Console.WriteLine("string after lowercase the characters 
-            Console.WriteLine(mystring.ToLower());
-        
-        
-      }
-    }
-
-//Given a valid (IPv4) Internet Protocol address S, the task is to find the defanged version of that IP address.
+program2:Given a valid (IPv4) Internet Protocol address S, the task is to find the defanged version of that IP address.
 Defanged Version of IP Address: is in which every period “.” is replaced by “[.]”. 
 
 
@@ -91,8 +330,79 @@ class Sol{
       }
     }
 
+program3:Given a balanced string str of size N with an equal number of L and R, the task is to find a maximum number X, such that a given string can be partitioned into X balanced substring. A string called to be balanced if the number of ‘L’s in the string equals the number of ‘R’s. 
 
-Anagram program:
+using System;
+class Sol{
+    public static void Main(string[]args){
+Console.WriteLine("enter a string");
+      string str=Console.ReadLine();
+      int leftcount=0;
+      int rightcount=0;
+
+      for(int i=0;i<str.Length;i++){
+        if(str[i]=='L'){
+          leftcount++;
+        }
+        if(str[i]=='R'){
+          rightcount++;
+        }
+        
+      }
+      if(leftcount%2==1){
+           Console.WriteLine(leftcount-1) ;
+        }
+        else{
+          Console.WriteLine(leftcount);
+        }
+}
+}
+program4: Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+
+using System;
+class Sol{
+    public static void Main(string[]args){
+        Console.WriteLine("enter a uppercase string:");
+        string mystring=Console.ReadLine();
+        Console.WriteLine("string after lowercase the characters 
+            Console.WriteLine(mystring.ToLower());
+        
+        
+      }
+    }
+
+program5. Problem description Given a string S, write a program to find the first non-repeating character in it and return its index.
+
+using System;
+ class solution{
+    public static void Main(string[] args){
+        string str=Console.ReadLine();
+        int sts=-1;
+        string status="False";
+        foreach(var i in str){
+            sts=-1;
+            foreach (var item in str)
+            {
+                if(i == item){
+                    sts++;
+                }
+            }
+            if(sts==0){
+                status="True";
+                Console.WriteLine(str.IndexOf(i));
+                break;
+            }
+        }
+        if(status=="False"){
+            Console.WriteLine("-1");
+        }
+    }
+}
+
+
+program6: Given two strings s and t, write a function to determine if t is an anagram of s.
+
+
 
 using System;
 using System.Collections;
@@ -142,23 +452,8 @@ class Sol{
     
     }
 }
-third maximum element:
-using System;
-class Sol{
-     public static void Main(string[]args){
-         Console.WriteLine("enter array 1 size:");
-         int n=Convert.ToInt32(Console.ReadLine());
-         int[] arr=new int[n];
-          Console.WriteLine("enter array 1 elements");
-         for(int i=0;i<n;i++){
-             arr[i]=Convert.ToInt32(Console.ReadLine());
-         }
-         Array.Sort(arr);
- 
-         
-         Console.WriteLine("printing third largest element i:"+arr[n-3]);
-}
-}
+        
+
 
 
 
