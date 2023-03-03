@@ -1,0 +1,166 @@
+remove duplicates from array:
+
+class Solution{
+
+    public static int removeduplicates(int[] arr,int n){
+
+         if(n==0 ||n==1)
+            return n;
+            int[] temp=new int[n];
+
+            int j=0;
+            for(int i=0;i<n-1;i++){
+                if(arr[i]!=arr[i+1]){
+                    temp[j++]=arr[i];
+                }
+
+                
+            }
+            temp[j++]=arr[n-1];
+            for(int i=0;i<j;i++){
+                arr[i]=temp[i];
+            }
+            return j;
+         
+    }
+    public static void Main(string[]args){
+        
+        int[] arr1={1,2,3,3,4,4,5};
+        
+        int n=arr1.Length;
+
+        n=removeduplicates(arr1,n);
+
+        for(int i=0;i<n;i++){
+           
+            Console.Write(arr1[i]+" ");
+        }
+
+
+    }
+    
+}
+
+remove vowels from string:
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+class Sol{
+    public static void Main(string[]args){
+        
+        Console.WriteLine("enter a string to remove vowels:");
+        string mystring=Console.ReadLine();
+        var letters=new HashSet<char>(mystring);
+
+        letters.ExceptWith("AaEeIiOoUu");
+          Console.WriteLine("string after removing vowels");
+       foreach(char c in letters){
+         
+          Console.WriteLine(c );
+          Console.WriteLine();
+      }
+    }
+}
+
+convertion of uppercase letters to lowercase in a string:
+
+using System;
+class Sol{
+    public static void Main(string[]args){
+        Console.WriteLine("enter a uppercase string:");
+        string mystring=Console.ReadLine();
+        Console.WriteLine("string after lowercase the characters 
+            Console.WriteLine(mystring.ToLower());
+        
+        
+      }
+    }
+
+//Given a valid (IPv4) Internet Protocol address S, the task is to find the defanged version of that IP address.
+Defanged Version of IP Address: is in which every period “.” is replaced by “[.]”. 
+
+
+using System;
+class Sol{
+     public static void Main(string[]args){
+     Console.WriteLine("enter a string");
+     string mystring=Console.ReadLine();
+     string str=mystring.Replace(".","[.]");
+     Console.WriteLine(str);
+      }
+    }
+
+
+Anagram program:
+
+using System;
+using System.Collections;
+class Sol{
+     public static bool anagram(ArrayList str1,ArrayList str2){
+         int n1=str1.Count;
+         int n2=str2.Count;
+         if(n1!=n2){
+             return false;
+         }
+         str1.Sort();
+         str2.Sort();
+         for(int i=0;i<n1;i++){
+             if(str1[i]!=str2[i]){
+                 return false;
+             }
+         }
+         return true;
+         
+     
+     }
+     public static void Main(string[]args){
+         ArrayList str1=new ArrayList();
+         str1.Add("m");
+         str1.Add("o");
+         str1.Add("u");
+         str1.Add("n");
+         str1.Add("i");
+         str1.Add("k");
+         str1.Add("a");
+         ArrayList str2=new ArrayList();
+         str2.Add("a");
+         str2.Add("m");
+         str2.Add("o");
+         str2.Add("u");
+         str2.Add("n");
+         str2.Add("i");
+         str2.Add("k");
+         if(anagram(str1,str2)){
+             Console.WriteLine("both strings are anagram with each other");
+         }
+         else{
+             Console.WriteLine("both strings are not anagram with each other");
+         }
+     
+    
+    
+    }
+}
+third maximum element:
+using System;
+class Sol{
+     public static void Main(string[]args){
+         Console.WriteLine("enter array 1 size:");
+         int n=Convert.ToInt32(Console.ReadLine());
+         int[] arr=new int[n];
+          Console.WriteLine("enter array 1 elements");
+         for(int i=0;i<n;i++){
+             arr[i]=Convert.ToInt32(Console.ReadLine());
+         }
+         Array.Sort(arr);
+ 
+         
+         Console.WriteLine("printing third largest element i:"+arr[n-3]);
+}
+}
+
+
+
+
+

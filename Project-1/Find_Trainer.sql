@@ -13,10 +13,7 @@ drop table Education_Details;
 drop table Company_Details;
 drop table Skill_Set;
 
-select *  from Trainer_Details;
-select * from Skill_Set;
-select * from Company_Details;
-select * from Education_Details;
+select User_Id,Institution, NOW() as dateandtime from Company_Details;
 
 /*inserting values into Trainer_Details: */
 insert into Trainer_Details(Name,Age,Gender,EmailID,Password,Contact_Number,Location,SocialMedia_Profile)values('Mounika',21,'Female','mounika@yahoo.com','Mounika@123',8787656543,'Chittoor','https://www.mona.com');
